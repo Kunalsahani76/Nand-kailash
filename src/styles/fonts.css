@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* Map Figma font-family names to actual loaded fonts */
+[class*="font-['Inter"] {
+  font-family: 'Inter', sans-serif;
+}
+[class*="font-['Poppins"] {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sticky navbar on desktop (no transform stacking context) */
+@media (min-width: 1440px) {
+  div[data-name="NAV BAR"] {
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 1440px !important;
+    z-index: 9999;
+  }
+  div[data-name="HOME"] {
+    padding-top: 61px;
+  }
+}
