@@ -1,10 +1,13 @@
+import AboutUs from "@/imports/AboutUs/index";
 import Home from "@/imports/Home/index";
 import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
+type Page = "home" | "about";
 
 export default function App() {
+  const [page, setPage] = useState<Page>("home");
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
@@ -30,7 +33,11 @@ export default function App() {
       }}
     >
       <div style={scaledPageStyle}>
-        <Home />
+        {page === "about" ? (
+          <AboutUs onNavigateHome={() => setPage("home")} />
+        ) : (
+          <Home onNavigateAbout={() => setPage("about")} />
+        )}
       </div>
     </div>
   );

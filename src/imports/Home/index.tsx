@@ -20,6 +20,10 @@ import imgFrame10 from "./0d7706bc5c91588b0a2de9e7d76c240dda34809e.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
 
+type HomeProps = {
+  onNavigateAbout?: () => void;
+};
+
 function Icon() {
   return <div className="absolute left-[534px] size-[32px] top-[702px]" data-name="Icon" />;
 }
@@ -1837,17 +1841,17 @@ function Frame11() {
   return <div className="bg-[#404040] h-[3px] relative shrink-0 w-0" />;
 }
 
-function Frame9() {
+function Frame9({ onNavigateAbout }: HomeProps) {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
       <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Home</p>
         <Frame />
       </div>
-      <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
+      <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateAbout} type="button">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">About Us</p>
         <Frame1 />
-      </div>
+      </button>
       <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Services</p>
         <Frame2 />
@@ -1872,7 +1876,7 @@ function Frame9() {
   );
 }
 
-export default function Home() {
+export default function Home({ onNavigateAbout }: HomeProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative size-full" data-name="HOME">
       <Frame39 />
@@ -1899,7 +1903,7 @@ export default function Home() {
       <div className="bg-white content-stretch flex fixed items-center justify-between left-0 px-[120px] py-[10px] shadow-[0px_2px_8px_rgba(0,0,0,0.12)] top-0 w-[1440px] z-50" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame38 />
-        <Frame9 />
+        <Frame9 onNavigateAbout={onNavigateAbout} />
         <div className="bg-[#fafafa] content-stretch flex items-center justify-center p-[10px] relative rounded-[4px] shrink-0">
           <div aria-hidden className="absolute border-[#ffce1b] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[4px]" />
           <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[21px] not-italic relative shrink-0 text-[#404040] text-[14px] text-center whitespace-nowrap">Get Consultation</p>
