@@ -19,7 +19,22 @@ import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
 
 type AboutUsProps = {
   onNavigateHome?: () => void;
+  onNavigateLandSurveying?: () => void;
+  onNavigateSolarWind?: () => void;
 };
+
+type ServiceDropdownItem = {
+  label: string;
+  onClick?: "landSurveying" | "solarWind";
+};
+
+const serviceDropdownItems: ServiceDropdownItem[] = [
+  { label: "Land Surveying", onClick: "landSurveying" },
+  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Building Construction" },
+  { label: "Electric Realted Work" },
+  { label: "Building Managment" },
+];
 
 function Overlay() {
   return (
@@ -2249,7 +2264,7 @@ function Frame6() {
   return <div className="bg-[#404040] h-[3px] relative shrink-0 w-0" />;
 }
 
-function Frame7({ onNavigateHome }: AboutUsProps) {
+function Frame7({ onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind }: AboutUsProps) {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
       <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateHome} type="button">
@@ -2260,9 +2275,21 @@ function Frame7({ onNavigateHome }: AboutUsProps) {
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">About Us</p>
         <Frame1 />
       </div>
-      <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
+      <div className="content-stretch flex flex-col group items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Services</p>
         <Frame2 />
+        <div className="absolute hidden group-hover:flex group-focus-within:flex flex-col left-1/2 top-[51px] -translate-x-1/2 w-[270px] z-[60]">
+          {serviceDropdownItems.map((item) => (
+            <button
+              className="bg-white border border-[#404040] content-stretch cursor-pointer flex items-center justify-start h-[35px] px-[12px] text-left w-full"
+              key={item.label}
+              onClick={item.onClick === "landSurveying" ? onNavigateLandSurveying : item.onClick === "solarWind" ? onNavigateSolarWind : undefined}
+              type="button"
+            >
+              <span className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">{item.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
       <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Projects</p>
@@ -2284,7 +2311,7 @@ function Frame7({ onNavigateHome }: AboutUsProps) {
   );
 }
 
-export default function AboutUs({ onNavigateHome }: AboutUsProps) {
+export default function AboutUs({ onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind }: AboutUsProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center justify-center relative size-full" data-name="ABOUT US">
       <Frame30 />
@@ -2311,7 +2338,7 @@ export default function AboutUs({ onNavigateHome }: AboutUsProps) {
       <div className="absolute backdrop-blur-[12.5px] bg-white content-stretch drop-shadow-[-20px_68px_10px_rgba(0,0,0,0),-13px_43px_9px_rgba(0,0,0,0.01),-7px_24px_7.5px_rgba(0,0,0,0.04),-3px_11px_5.5px_rgba(0,0,0,0.07),-1px_3px_3px_rgba(0,0,0,0.08)] flex items-center justify-between left-0 px-[120px] py-[10px] top-0 w-[1440px]" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame14 />
-        <Frame7 onNavigateHome={onNavigateHome} />
+        <Frame7 onNavigateHome={onNavigateHome} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} />
         <div className="bg-[#fafafa] content-stretch flex items-center justify-center p-[10px] relative rounded-[4px] shrink-0">
           <div aria-hidden className="absolute border-[#ffce1b] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[4px]" />
           <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[21px] not-italic relative shrink-0 text-[#404040] text-[14px] text-center whitespace-nowrap">Get Consultation</p>

@@ -1,10 +1,12 @@
 import AboutUs from "@/imports/AboutUs/index";
 import Home from "@/imports/Home/index";
+import ServiceSuryeys from "@/imports/ServiceSuryeys/index";
+import SolarWindPage from "@/imports/SolarWindPage/index";
 import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
-type Page = "home" | "about";
+type Page = "home" | "about" | "landSurveying" | "solarWind";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -34,9 +36,27 @@ export default function App() {
     >
       <div style={scaledPageStyle}>
         {page === "about" ? (
-          <AboutUs onNavigateHome={() => setPage("home")} />
+          <AboutUs
+            onNavigateHome={() => setPage("home")}
+            onNavigateLandSurveying={() => setPage("landSurveying")}
+            onNavigateSolarWind={() => setPage("solarWind")}
+          />
+        ) : page === "landSurveying" ? (
+          <ServiceSuryeys
+            onNavigateAbout={() => setPage("about")}
+            onNavigateHome={() => setPage("home")}
+          />
+        ) : page === "solarWind" ? (
+          <SolarWindPage
+            onNavigateAbout={() => setPage("about")}
+            onNavigateHome={() => setPage("home")}
+          />
         ) : (
-          <Home onNavigateAbout={() => setPage("about")} />
+          <Home
+            onNavigateAbout={() => setPage("about")}
+            onNavigateLandSurveying={() => setPage("landSurveying")}
+            onNavigateSolarWind={() => setPage("solarWind")}
+          />
         )}
       </div>
     </div>
