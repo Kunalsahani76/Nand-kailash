@@ -1,4 +1,7 @@
 import AboutUs from "@/imports/AboutUs/index";
+import BuildingConstruction from "@/imports/BuildingConstruction/index";
+import BuldingManagment from "@/imports/BuldingManagment/index";
+import ElectricWork from "@/imports/ElectricWork/index";
 import Home from "@/imports/Home/index";
 import ServiceSuryeys from "@/imports/ServiceSuryeys/index";
 import SolarWindPage from "@/imports/SolarWindPage/index";
@@ -6,7 +9,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
-type Page = "home" | "about" | "landSurveying" | "solarWind";
+type Page = "home" | "about" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -40,6 +43,9 @@ export default function App() {
             onNavigateHome={() => setPage("home")}
             onNavigateLandSurveying={() => setPage("landSurveying")}
             onNavigateSolarWind={() => setPage("solarWind")}
+            onNavigateBuildingConstruction={() => setPage("buildingConstruction")}
+            onNavigateElectricWork={() => setPage("electricWork")}
+            onNavigateBuildingManagement={() => setPage("buildingManagement")}
           />
         ) : page === "landSurveying" ? (
           <ServiceSuryeys
@@ -51,11 +57,44 @@ export default function App() {
             onNavigateAbout={() => setPage("about")}
             onNavigateHome={() => setPage("home")}
           />
+        ) : page === "buildingConstruction" ? (
+          <BuildingConstruction
+            onNavigateAbout={() => setPage("about")}
+            onNavigateHome={() => setPage("home")}
+            onNavigateLandSurveying={() => setPage("landSurveying")}
+            onNavigateSolarWind={() => setPage("solarWind")}
+            onNavigateBuildingConstruction={() => setPage("buildingConstruction")}
+            onNavigateElectricWork={() => setPage("electricWork")}
+            onNavigateBuildingManagement={() => setPage("buildingManagement")}
+          />
+        ) : page === "electricWork" ? (
+          <ElectricWork
+            onNavigateAbout={() => setPage("about")}
+            onNavigateHome={() => setPage("home")}
+            onNavigateLandSurveying={() => setPage("landSurveying")}
+            onNavigateSolarWind={() => setPage("solarWind")}
+            onNavigateBuildingConstruction={() => setPage("buildingConstruction")}
+            onNavigateElectricWork={() => setPage("electricWork")}
+            onNavigateBuildingManagement={() => setPage("buildingManagement")}
+          />
+        ) : page === "buildingManagement" ? (
+          <BuldingManagment
+            onNavigateAbout={() => setPage("about")}
+            onNavigateHome={() => setPage("home")}
+            onNavigateLandSurveying={() => setPage("landSurveying")}
+            onNavigateSolarWind={() => setPage("solarWind")}
+            onNavigateBuildingConstruction={() => setPage("buildingConstruction")}
+            onNavigateElectricWork={() => setPage("electricWork")}
+            onNavigateBuildingManagement={() => setPage("buildingManagement")}
+          />
         ) : (
           <Home
             onNavigateAbout={() => setPage("about")}
             onNavigateLandSurveying={() => setPage("landSurveying")}
             onNavigateSolarWind={() => setPage("solarWind")}
+            onNavigateBuildingConstruction={() => setPage("buildingConstruction")}
+            onNavigateElectricWork={() => setPage("electricWork")}
+            onNavigateBuildingManagement={() => setPage("buildingManagement")}
           />
         )}
       </div>
