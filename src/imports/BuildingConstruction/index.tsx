@@ -21,6 +21,8 @@ type BuildingConstructionProps = {
   onNavigateBuildingConstruction?: () => void;
   onNavigateElectricWork?: () => void;
   onNavigateBuildingManagement?: () => void;
+  onNavigateProjects?: () => void;
+  onNavigateSustainability?: () => void;
 };
 
 type ServiceDropdownItem = {
@@ -2433,7 +2435,7 @@ function Frame6() {
   return <div className="bg-[#404040] h-[3px] relative shrink-0 w-0" />;
 }
 
-function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: BuildingConstructionProps) {
+function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability }: BuildingConstructionProps) {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
       <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateHome} type="button">
@@ -2460,14 +2462,14 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
           ))}
         </div>
       </div>
-      <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
+      <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateProjects} type="button">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Projects</p>
         <Frame3 />
-      </div>
-      <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
+      </button>
+      <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateSustainability} type="button">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Sustainability</p>
         <Frame4 />
-      </div>
+      </button>
       <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Careers</p>
         <Frame5 />
@@ -2480,7 +2482,7 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
   );
 }
 
-export default function BuildingConstruction({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: BuildingConstructionProps) {
+export default function BuildingConstruction({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability }: BuildingConstructionProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center justify-center relative size-full" data-name="BUILDING CONSTRUCTION">
       <Frame12 />
@@ -2507,6 +2509,8 @@ export default function BuildingConstruction({ onNavigateAbout, onNavigateHome, 
           onNavigateBuildingConstruction={onNavigateBuildingConstruction}
           onNavigateElectricWork={onNavigateElectricWork}
           onNavigateBuildingManagement={onNavigateBuildingManagement}
+          onNavigateProjects={onNavigateProjects}
+          onNavigateSustainability={onNavigateSustainability}
         />
         <div className="bg-[#fafafa] content-stretch flex items-center justify-center p-[10px] relative rounded-[4px] shrink-0">
           <div aria-hidden className="absolute border-[#ffce1b] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[4px]" />

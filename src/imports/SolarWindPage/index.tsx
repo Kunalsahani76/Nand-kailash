@@ -14,10 +14,12 @@ const hanken = "'Hanken Grotesk', sans-serif";
 type SolarWindPageProps = {
   onNavigateAbout?: () => void;
   onNavigateHome?: () => void;
+  onNavigateProjects?: () => void;
+  onNavigateSustainability?: () => void;
 };
 
 /* ─── Navbar ─── */
-function Navbar({ onNavigateAbout, onNavigateHome }: SolarWindPageProps) {
+function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability }: SolarWindPageProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,8 +33,8 @@ function Navbar({ onNavigateAbout, onNavigateHome }: SolarWindPageProps) {
     { label: "Home", onClick: onNavigateHome },
     { label: "About Us", onClick: onNavigateAbout },
     { label: "Services" },
-    { label: "Projects" },
-    { label: "Sustainability" },
+    { label: "Projects", onClick: onNavigateProjects },
+    { label: "Sustainability", onClick: onNavigateSustainability },
     { label: "Careers" },
     { label: "Contact Us" },
   ];
@@ -790,10 +792,10 @@ function Footer() {
 }
 
 /* ─── App ─── */
-export default function SolarWindPage({ onNavigateAbout, onNavigateHome }: SolarWindPageProps) {
+export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability }: SolarWindPageProps) {
   return (
     <div className="w-full min-h-screen bg-white">
-      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} />
+      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} />
       <main>
         <HeroSection />
         <AboutSection />
