@@ -155,6 +155,25 @@
   #root {
     min-height: 100%;
     width: 100%;
+    isolation: isolate;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+
+  [data-name^="Section"],
+  [data-name="FOOTER"],
+  [data-name="Footer"],
+  [data-name="Container"][class*="w-[1440px]"],
+  [data-name="Background"][class*="w-[1440px]"] {
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+  }
+
+  [data-name="NAV BAR"] {
+    backface-visibility: hidden;
+    will-change: transform;
   }
 
   h1 {

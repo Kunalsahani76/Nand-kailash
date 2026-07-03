@@ -16,10 +16,12 @@ type SolarWindPageProps = {
   onNavigateHome?: () => void;
   onNavigateProjects?: () => void;
   onNavigateSustainability?: () => void;
+  onNavigateCareers?: () => void;
+  onNavigateContact?: () => void;
 };
 
 /* ─── Navbar ─── */
-function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability }: SolarWindPageProps) {
+function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,8 +37,8 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
     { label: "Services" },
     { label: "Projects", onClick: onNavigateProjects },
     { label: "Sustainability", onClick: onNavigateSustainability },
-    { label: "Careers" },
-    { label: "Contact Us" },
+    { label: "Careers", onClick: onNavigateCareers },
+    { label: "Contact Us", onClick: onNavigateContact },
   ];
 
   return (
@@ -792,10 +794,10 @@ function Footer() {
 }
 
 /* ─── App ─── */
-export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability }: SolarWindPageProps) {
+export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   return (
     <div className="w-full min-h-screen bg-white">
-      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} />
+      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
       <main>
         <HeroSection />
         <AboutSection />
