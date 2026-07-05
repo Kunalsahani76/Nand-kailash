@@ -19,6 +19,7 @@ import imgFrame9 from "./7a2eaf41fe740c61cd606a05496137d6bd972dfe.png";
 import imgFrame10 from "./0d7706bc5c91588b0a2de9e7d76c240dda34809e.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
+import websiteIcon from "@/images/website icon.png";
 
 type HomeProps = {
   onNavigateAbout?: () => void;
@@ -1034,7 +1035,7 @@ function Frame65() {
 function Frame36() {
   return (
     <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -1700,16 +1701,16 @@ function Container23() {
 
 function Frame20() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start not-italic relative shrink-0 text-center w-[133px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[48px] relative shrink-0 text-[36px] text-black whitespace-nowrap">50+</p>
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] min-w-full relative shrink-0 text-[#2f2f2f] text-[15px] w-[min-content]">Projects Delivered</p>
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[165px]">
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">50+</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Projects Delivered</p>
     </div>
   );
 }
 
 function Frame21() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center opacity-0 relative shrink-0">
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
       <Container23 />
       <Frame20 />
     </div>
@@ -1747,16 +1748,16 @@ function Container24() {
 
 function Frame23() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start not-italic relative shrink-0 w-[133px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[48px] relative shrink-0 text-[36px] text-black text-center whitespace-nowrap">10+</p>
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] min-w-full relative shrink-0 text-[#2f2f2f] text-[15px] w-[min-content]">Cities Reached</p>
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[165px]">
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">10+</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Cities Reached</p>
     </div>
   );
 }
 
 function Frame22() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center opacity-0 relative shrink-0">
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
       <Container24 />
       <Frame23 />
     </div>
@@ -1780,16 +1781,16 @@ function Icon19() {
 
 function Frame25() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start not-italic relative shrink-0 w-[133px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[48px] relative shrink-0 text-[36px] text-black text-center whitespace-nowrap">100+</p>
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] min-w-full relative shrink-0 text-[#2f2f2f] text-[15px] w-[min-content]">Skilled Workforce</p>
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[190px]">
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">100+</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Skilled Workforce</p>
     </div>
   );
 }
 
 function Frame24() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center opacity-0 relative shrink-0">
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
       <Icon19 />
       <Frame25 />
     </div>
@@ -1811,16 +1812,16 @@ function Icon20() {
 
 function Frame31() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start not-italic relative shrink-0 whitespace-nowrap">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[48px] relative shrink-0 text-[36px] text-black text-center">100%</p>
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] relative shrink-0 text-[#2f2f2f] text-[15px]">Sustainability Focus</p>
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 whitespace-nowrap">
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black">100%</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px]">Sustainability Focus</p>
     </div>
   );
 }
 
 function Frame28() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center opacity-0 relative shrink-0">
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
       <Icon20 />
       <Frame31 />
     </div>
@@ -1830,7 +1831,7 @@ function Frame28() {
 function Frame38() {
   return (
     <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -1926,7 +1927,7 @@ export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavig
         </div>
         <div aria-hidden className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[6px]" />
       </div>
-      <div className="-translate-x-1/2 absolute content-stretch drop-shadow-[0.445px_0.445px_0.314px_rgba(0,0,0,0.26),1.211px_1.211px_0.856px_rgba(0,0,0,0.25),2.658px_2.658px_1.88px_rgba(0,0,0,0.23),5.901px_5.901px_4.173px_rgba(0,0,0,0.19),10px_10px_10.607px_rgba(0,0,0,0.05),-0.5px_-0.5px_0px_rgba(0,0,0,0.05)] flex gap-[91px] items-center left-1/2 pb-[30px] pt-[40px] px-[30px] rounded-[5.25px] top-[702px]">
+      <div className="-translate-x-1/2 absolute content-stretch flex h-[145px] items-center justify-between left-1/2 px-[36px] rounded-[5.25px] shadow-[0px_8px_18px_rgba(0,0,0,0.28)] top-[720px] w-[1200px]">
         <div aria-hidden className="absolute bg-[#f4f4f4] inset-0 pointer-events-none rounded-[5.25px]" />
         <Frame21 />
         <Frame22 />

@@ -171,9 +171,93 @@
     contain-intrinsic-size: 900px;
   }
 
+  [data-name="SERVICE SURYEYS"] > div:not([data-name="NAV BAR"]),
+  [data-name="BUILDING CONSTRUCTION"] > div:not([data-name="NAV BAR"]),
+  [data-name="ELECTRIC WORK"] > div:not([data-name="NAV BAR"]),
+  [data-name="BULDING MANAGMENT"] > div:not([data-name="NAV BAR"]),
+  [data-name="SUSTAINABILITY"] > div:not([data-name="NAV BAR"]),
+  [data-name="CAREER"] > div:not([data-name="NAV BAR"]),
+  [data-name="CONTACT"] > div:not([data-name="NAV BAR"]),
+  [data-name="SOLAR WIND"] main > section,
+  [data-name="SOLAR WIND"] > footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+  }
+
   [data-name="NAV BAR"] {
     backface-visibility: hidden;
     will-change: transform;
+  }
+
+  [data-name="Button"],
+  [data-name="NAV BAR"] > div:last-child,
+  [data-name="SOLAR WIND"] nav button:not([aria-label]),
+  [data-name="SOLAR WIND"] main a,
+  [data-name="SOLAR WIND"] main button {
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  [data-name="Button"] *,
+  [data-name="NAV BAR"] > div:last-child *,
+  [data-name="SOLAR WIND"] nav button:not([aria-label]) *,
+  [data-name="SOLAR WIND"] main a *,
+  [data-name="SOLAR WIND"] main button * {
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      stroke 180ms ease,
+      fill 180ms ease,
+      transform 180ms ease;
+  }
+
+  [data-name="Button"]:hover,
+  [data-name="NAV BAR"] > div:last-child:hover,
+  [data-name="SOLAR WIND"] nav button:not([aria-label]):hover,
+  [data-name="SOLAR WIND"] main a:hover,
+  [data-name="SOLAR WIND"] main button:hover {
+    background-color: #ffce1b !important;
+    border-color: #ffce1b !important;
+    box-shadow: 0 12px 24px rgba(255, 206, 27, 0.28);
+    color: #0b0b0b !important;
+    transform: translateY(-2px);
+  }
+
+  [data-name="Button"]:hover p,
+  [data-name="Button"]:hover span,
+  [data-name="NAV BAR"] > div:last-child:hover p,
+  [data-name="SOLAR WIND"] nav button:not([aria-label]):hover,
+  [data-name="SOLAR WIND"] nav button:not([aria-label]):hover *,
+  [data-name="SOLAR WIND"] main a:hover,
+  [data-name="SOLAR WIND"] main a:hover *,
+  [data-name="SOLAR WIND"] main button:hover,
+  [data-name="SOLAR WIND"] main button:hover * {
+    color: #0b0b0b !important;
+  }
+
+  [data-name="Button"]:hover [aria-hidden],
+  [data-name="NAV BAR"] > div:last-child:hover [aria-hidden] {
+    border-color: #ffce1b !important;
+  }
+
+  [data-name="Button"]:hover svg,
+  [data-name="Button"]:hover svg *,
+  [data-name="SOLAR WIND"] main a:hover svg,
+  [data-name="SOLAR WIND"] main a:hover svg *,
+  [data-name="SOLAR WIND"] main button:hover svg,
+  [data-name="SOLAR WIND"] main button:hover svg * {
+    stroke: #0b0b0b !important;
+  }
+
+  [data-name="Button"]:hover > svg,
+  [data-name="Button"]:hover [data-name="Icon"] {
+    transform: translateX(3px);
   }
 
   h1 {

@@ -17,6 +17,7 @@ import imgCadIcon from "./d02fdc53d9fef34ef9c2b5456861eda9a22c0ce8.png";
 import imgHpPlotterIcon from "./75fa3b6167771fde4d23bfb6773c9fa8f7bcc233.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
+import websiteIcon from "@/images/website icon.png";
 
 type ServiceSuryeysProps = {
   onNavigateAbout?: () => void;
@@ -2170,7 +2171,7 @@ function Frame37() {
 function Frame8() {
   return (
     <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2773,7 +2774,7 @@ function Footer() {
 function Frame10() {
   return (
     <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2855,7 +2856,7 @@ export default function ServiceSuryeys({ onNavigateAbout, onNavigateHome, onNavi
         </div>
         <div aria-hidden className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[6px]" />
       </div>
-      <div className="absolute backdrop-blur-[12.5px] bg-white content-stretch drop-shadow-[-20px_68px_10px_rgba(0,0,0,0),-13px_43px_9px_rgba(0,0,0,0.01),-7px_24px_7.5px_rgba(0,0,0,0.04),-3px_11px_5.5px_rgba(0,0,0,0.07),-1px_3px_3px_rgba(0,0,0,0.08)] flex items-center justify-between left-0 px-[120px] py-[10px] top-0 w-[1440px]" data-name="NAV BAR">
+      <div className="bg-white content-stretch flex fixed items-center justify-between left-0 px-[120px] py-[10px] shadow-[0px_2px_8px_rgba(0,0,0,0.12)] top-0 w-[1440px] z-50" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame10 />
         <Frame7 onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />

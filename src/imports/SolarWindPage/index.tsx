@@ -5,6 +5,7 @@ import imgAbout from "@/imports/SoloarWind/3d34e7fd5b4bc7ce76b764d4b677991c3aeee
 import imgProcessBg from "@/imports/SoloarWind/f5c723ac516ab16778bbc4a1a837f54ecbb670af.png";
 import imgFooterBg from "@/imports/SoloarWind/ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgLogo from "@/imports/SoloarWind/c20da46eb86065efabefe8dda3d480f08dfffacc.png";
+import websiteIcon from "@/images/website icon.png";
 import { Menu, X } from "lucide-react";
 
 const sora = "'Sora', sans-serif";
@@ -44,11 +45,11 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-shadow ${scrolled ? "shadow-md" : ""}`}
-      style={{ backdropFilter: "blur(12.5px)", backgroundColor: "rgba(255,255,255,0.95)", borderBottom: "1px solid rgba(64,64,64,0.5)" }}
+      style={{ backgroundColor: "rgba(255,255,255,0.98)", borderBottom: "1px solid rgba(64,64,64,0.5)" }}
     >
       <div className="flex items-center justify-between px-6 md:px-10 lg:px-[120px] py-[10px]">
         {/* Logo */}
-        <img src={imgLogo} alt="Nanda Kailash Infrastructure" className="h-[49px] w-auto object-contain" />
+        <img src={websiteIcon} alt="Nanda Kailash Infrastructure" className="h-[49px] w-auto object-contain" />
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-1">
@@ -614,7 +615,7 @@ function Footer() {
             {/* Column 1: Logo + About */}
             <div className="flex flex-col gap-[12px]">
               <div className="relative h-[49px] w-[73px]">
-                <img src={imgLogo} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <p
                 className="text-black text-[16px] md:text-[18px] capitalize leading-[32px] max-w-[314px]"
@@ -796,7 +797,7 @@ function Footer() {
 /* ─── App ─── */
 export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-white" data-name="SOLAR WIND">
       <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
       <main>
         <HeroSection />

@@ -16,6 +16,7 @@ import imgImpactSection from "./9a4d4c14edb9fde255fedb215c49569dbf1f10d2.png";
 import imgFrame251 from "./b7630425d6ae0fc80f6b8e21efb3e7d5b29986ea.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
+import websiteIcon from "@/images/website icon.png";
 
 type AboutUsProps = {
   onNavigateHome?: () => void;
@@ -313,7 +314,7 @@ function Frame61() {
 
 function Frame30() {
   return (
-    <div className="h-[749px] overflow-clip relative shrink-0 w-[1440px]">
+    <div className="h-[749px] overflow-clip relative shrink-0 w-[1440px]" data-name="Section - Hero">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <img alt="" className="absolute max-w-none object-cover size-full" src={imgFrame188} />
         <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(89.7667deg, rgba(0, 0, 0, 0.8) 0.10269%, rgba(102, 102, 102, 0) 187.35%)" }} />
@@ -420,7 +421,7 @@ function BridgeConstruction3() {
 
 function Frame37() {
   return (
-    <div className="relative shrink-0 w-full">
+    <div className="relative shrink-0 w-full" data-name="Section - About NKID">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-between px-[40px] py-[30px] relative size-full">
           <Frame36 />
@@ -500,7 +501,7 @@ function Component2() {
 
 function Frame34() {
   return (
-    <div className="bg-[rgba(55,95,157,0.8)] relative shrink-0 w-full">
+    <div className="bg-[rgba(55,95,157,0.8)] relative shrink-0 w-full" data-name="Section - Vision Mission">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[64px] items-center justify-center px-[40px] py-[50px] relative size-full">
           <div className="flex flex-row items-center self-stretch">
@@ -782,7 +783,7 @@ function Frame19() {
 
 function Frame38() {
   return (
-    <div className="bg-[#212121] content-stretch flex flex-col gap-[55px] items-center py-[60px] relative shrink-0 w-full">
+    <div className="bg-[#212121] content-stretch flex flex-col gap-[55px] items-center py-[60px] relative shrink-0 w-full" data-name="Section - Values">
       <Container13 />
       <Frame19 />
     </div>
@@ -1620,7 +1621,7 @@ function Frame71() {
 
 function Frame48() {
   return (
-    <div className="relative shrink-0 w-full">
+    <div className="relative shrink-0 w-full" data-name="Section - CTA">
       <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame251} />
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[55px] items-center px-[20px] py-[80px] relative size-full">
@@ -1635,7 +1636,7 @@ function Frame48() {
 function Frame12() {
   return (
     <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2238,7 +2239,7 @@ function Footer() {
 function Frame14() {
   return (
     <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame127} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2326,7 +2327,7 @@ export default function AboutUs({ onNavigateHome, onNavigateLandSurveying, onNav
       <Frame34 />
       <Frame38 />
       <SectionSolutionsGrid />
-      <div className="content-stretch flex flex-col h-[344px] items-center justify-center px-[24px] py-[96px] relative shrink-0 w-[1440px]" data-name="Impact Section">
+      <div className="content-stretch flex flex-col h-[344px] items-center justify-center px-[24px] py-[96px] relative shrink-0 w-[1440px]" data-name="Section - Impact">
         <div aria-hidden className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 overflow-hidden">
             <img alt="" className="absolute h-[221.51%] left-[-0.03%] max-w-none top-[-0.09%] w-full" src={imgImpactSection} />
@@ -2342,7 +2343,7 @@ export default function AboutUs({ onNavigateHome, onNavigateLandSurveying, onNav
         </div>
         <div aria-hidden className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[6px]" />
       </div>
-      <div className="absolute backdrop-blur-[12.5px] bg-white content-stretch drop-shadow-[-20px_68px_10px_rgba(0,0,0,0),-13px_43px_9px_rgba(0,0,0,0.01),-7px_24px_7.5px_rgba(0,0,0,0.04),-3px_11px_5.5px_rgba(0,0,0,0.07),-1px_3px_3px_rgba(0,0,0,0.08)] flex items-center justify-between left-0 px-[120px] py-[10px] top-0 w-[1440px]" data-name="NAV BAR">
+      <div className="bg-white content-stretch flex fixed items-center justify-between left-0 px-[120px] py-[10px] shadow-[0px_2px_8px_rgba(0,0,0,0.12)] top-0 w-[1440px] z-50" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame14 />
         <Frame7 onNavigateHome={onNavigateHome} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
