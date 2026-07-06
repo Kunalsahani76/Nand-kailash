@@ -120,155 +120,172 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  const renderedPage =
+    page === "about" ? (
+      <AboutUs
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "landSurveying" ? (
+      <ServiceSuryeys
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "solarWind" ? (
+      <SolarWindPage
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "buildingConstruction" ? (
+      <BuildingConstruction
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "electricWork" ? (
+      <ElectricWork
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "buildingManagement" ? (
+      <BuldingManagment
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "projects" ? (
+      <Projects
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "sustainability" ? (
+      <Sustainability
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "career" ? (
+      <Career
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : page === "contact" ? (
+      <Contact
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    ) : (
+      <Home
+        onNavigateAbout={() => navigateTo("about")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
+        onNavigateProjects={() => navigateTo("projects")}
+        onNavigateSustainability={() => navigateTo("sustainability")}
+        onNavigateCareers={() => navigateTo("career")}
+        onNavigateContact={() => navigateTo("contact")}
+      />
+    );
+
   const scaledPageStyle: CSSProperties & { zoom: number } = {
     width: `${DESIGN_WIDTH}px`,
     transformOrigin: "top left",
     zoom: scale,
   };
 
+  if (page === "solarWind" && scale < 1024 / DESIGN_WIDTH) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          minWidth: 0,
+          overflowX: "hidden",
+          position: "relative",
+        }}
+      >
+        {renderedPage}
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
         width: "100%",
+        minWidth: 0,
         overflowX: "hidden",
         position: "relative",
       }}
     >
-      <div style={scaledPageStyle}>
-        {page === "about" ? (
-          <AboutUs
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "landSurveying" ? (
-          <ServiceSuryeys
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "solarWind" ? (
-          <SolarWindPage
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "buildingConstruction" ? (
-          <BuildingConstruction
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "electricWork" ? (
-          <ElectricWork
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "buildingManagement" ? (
-          <BuldingManagment
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "projects" ? (
-          <Projects
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "sustainability" ? (
-          <Sustainability
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "career" ? (
-          <Career
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : page === "contact" ? (
-          <Contact
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateHome={() => navigateTo("home")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        ) : (
-          <Home
-            onNavigateAbout={() => navigateTo("about")}
-            onNavigateLandSurveying={() => navigateTo("landSurveying")}
-            onNavigateSolarWind={() => navigateTo("solarWind")}
-            onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
-            onNavigateElectricWork={() => navigateTo("electricWork")}
-            onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
-            onNavigateProjects={() => navigateTo("projects")}
-            onNavigateSustainability={() => navigateTo("sustainability")}
-            onNavigateCareers={() => navigateTo("career")}
-            onNavigateContact={() => navigateTo("contact")}
-          />
-        )}
-      </div>
+      <div style={scaledPageStyle}>{renderedPage}</div>
     </div>
   );
 }
