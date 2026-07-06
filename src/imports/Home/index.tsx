@@ -81,9 +81,11 @@ function Frame73() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full">
       <Margin />
-      <p className="[word-break:break-word] font-['Poppins:ExtraBold',sans-serif] leading-[0] not-italic relative shrink-0 text-[54.95px] text-white uppercase w-[993px]">
-        <span className="leading-[60.445px]">{`Building India's Future Through `}</span>
-        <span className="leading-[60.445px] text-[#355d9b]">Smart Infrastructure</span>
+      <p className="[word-break:break-word] font-['Poppins:ExtraBold',sans-serif] leading-[0] not-italic relative shrink-0 text-[64px] text-white w-[1260px]">
+        <span className="leading-[70px]">{`Building India's Future`}</span>
+        <br />
+        <span className="leading-[70px]">{`Through `}</span>
+        <span className="leading-[70px] text-[#375f9d]">Smart Infrastructure</span>
       </p>
     </div>
   );
@@ -96,7 +98,7 @@ function Frame70() {
 function Component() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start justify-center relative shrink-0" data-name="Component 19">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[32.4px] not-italic relative shrink-0 text-[18px] text-[rgba(255,255,255,0.75)] w-[531px]">{`Nanda Kailash Infrastructure & Developers delivers high-quality infrastructure, construction, renewable energy, and engineering solutions designed to support sustainable growth and modern development across India.`}</p>
+      <p className="[word-break:break-word] capitalize font-['Inter:Regular',sans-serif] font-normal leading-[32px] not-italic relative shrink-0 text-[20px] text-[rgba(255,255,255,0.78)] w-[720px]">{`Nanda Kailash Infrastructure & Developers delivers high-quality infrastructure, construction, renewable energy, and engineering solutions designed to support sustainable growth and modern development across India.`}</p>
       <Frame70 />
     </div>
   );
@@ -427,9 +429,9 @@ function Frame41() {
 
 function Text() {
   return (
-    <div className="h-[19.5px] relative shrink-0 w-full" data-name="Text">
-      <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-bold justify-center leading-[0] left-[103px] not-italic text-[#ffce1b] text-[22px] text-center top-[9.72px] tracking-[1.2px] uppercase whitespace-nowrap">
-        <p className="leading-[16px]">WHY CHOOSE US</p>
+    <div className="h-[34px] relative shrink-0 w-full" data-name="Text">
+      <div className="[word-break:break-word] absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-bold justify-center leading-[0] left-0 not-italic text-[#ffce1b] text-[32px] text-left top-0 whitespace-nowrap">
+        <p className="leading-[34px] capitalize">Why Choose Us</p>
       </div>
     </div>
   );
@@ -437,11 +439,12 @@ function Text() {
 
 function Frame42() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[38px] items-start justify-center relative shrink-0 w-full">
       <Text />
-      <p className="[word-break:break-word] font-['Poppins:ExtraBold',sans-serif] leading-[0] not-italic relative shrink-0 text-[32.97px] text-white w-[698px]">
-        <span className="leading-[37.916px]">{`Trusted Infrastructure Partner for `}</span>
-        <span className="leading-[37.916px] text-[#375f9d]">Modern Development</span>
+      <p className="[word-break:break-word] font-['Poppins:ExtraBold',sans-serif] leading-[0] not-italic relative shrink-0 text-[58px] text-white w-[1120px]">
+        <span className="leading-[1.25]">{`Trusted Infrastructure Partner For`}</span>
+        <br />
+        <span className="leading-[1.25] text-[#375f9d]">Modern Development</span>
       </p>
     </div>
   );

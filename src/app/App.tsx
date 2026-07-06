@@ -62,6 +62,59 @@ export default function App() {
     return () => window.clearTimeout(timeout);
   }, [page]);
 
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      document.querySelectorAll(".image-card-hover").forEach((element) => {
+        element.classList.remove("image-card-hover");
+      });
+
+      document.querySelectorAll(".image-card-hover__image").forEach((element) => {
+        element.classList.remove("image-card-hover__image");
+      });
+
+      document.querySelectorAll(".text-card-hover").forEach((element) => {
+        element.classList.remove("text-card-hover");
+      });
+
+      document.querySelectorAll<HTMLImageElement>("img").forEach((image) => {
+        const card = image.closest<HTMLElement>(
+          '[data-name*="Card"], [data-name*="Article"], [data-name*="Service Cards"], [data-name*="Project Card"], div[class*="rounded"][class*="overflow-clip"]',
+        );
+
+        if (
+          !card ||
+          card.closest('[data-name="NAV BAR"], [data-name="FOOTER"], [data-name="Footer"]') ||
+          card.className.includes("w-[1440px]") ||
+          card.className.includes("h-[750px]")
+        ) {
+          return;
+        }
+
+        card.classList.add("image-card-hover");
+        card.querySelectorAll("img").forEach((cardImage) => {
+          cardImage.classList.add("image-card-hover__image");
+        });
+      });
+
+      document
+        .querySelectorAll<HTMLElement>(
+          '[data-name*="Card"], [data-name*="Service Cards"], div[class*="bg-gradient-to-b"][class*="rounded"]',
+        )
+        .forEach((card) => {
+          const hasImage = Boolean(card.querySelector("img"));
+          const hasText = (card.textContent || "").trim().length > 8;
+          const isChrome = Boolean(card.closest('[data-name="NAV BAR"], [data-name="FOOTER"], [data-name="Footer"]'));
+          const isFullWidthSection = card.className.includes("w-[1440px]") || card.className.includes("h-[750px]");
+
+          if (!hasImage && hasText && !isChrome && !isFullWidthSection) {
+            card.classList.add("text-card-hover");
+          }
+        });
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
+  }, [page]);
+
   const navigateTo = useCallback((nextPage: Page) => {
     setPage(nextPage);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });

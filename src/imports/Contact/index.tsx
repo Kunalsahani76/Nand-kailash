@@ -4,6 +4,7 @@ import imgAb6AXuDcKAzknQAlWPfReUSvHfmbl4TfTsTolkWmPwXQdxe6MxlKjfHh0Dc7L436Uksuep
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
 import websiteIcon from "@/images/website icon.png";
+import { useState, type FormEvent } from "react";
 
 type ContactProps = {
   onNavigateAbout?: () => void;
@@ -507,17 +508,100 @@ function Icon1() {
   );
 }
 
-function Form() {
+type InquiryFormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  brief: string;
+};
+
+type InquiryFieldProps = {
+  label: string;
+  name: keyof InquiryFormValues;
+  placeholder: string;
+  type?: "email" | "tel" | "text";
+  value: string;
+  onChange: (name: keyof InquiryFormValues, value: string) => void;
+};
+
+function InquiryField({ label, name, placeholder, type = "text", value, onChange }: InquiryFieldProps) {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full" data-name="Form">
-      <Container9 />
-      <Container14 />
-      <Container16 />
-      <div className="bg-[#355d9b] content-stretch flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0 w-[208px]" data-name="Button">
+    <label className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0 w-full">
+      <span className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] not-italic text-[14px] text-white whitespace-nowrap">{label}</span>
+      <input
+        className="bg-transparent border-0 border-b border-[#44474e] font-['Manrope:Regular',sans-serif] font-normal leading-[24px] outline-none pb-[18px] pt-[2px] text-[16px] text-[#e1e3e4] transition-colors w-full placeholder:text-[rgba(196,198,207,0.4)] focus:border-[#ffce1b]"
+        name={name}
+        onChange={(event) => onChange(name, event.target.value)}
+        placeholder={placeholder}
+        required
+        type={type}
+        value={value}
+      />
+    </label>
+  );
+}
+
+type InquiryTextareaProps = {
+  value: string;
+  onChange: (name: keyof InquiryFormValues, value: string) => void;
+};
+
+function InquiryTextarea({ value, onChange }: InquiryTextareaProps) {
+  return (
+    <label className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0 w-full">
+      <span className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] not-italic text-[14px] text-white whitespace-nowrap">PROJECT BRIEF</span>
+      <textarea
+        className="bg-transparent border-0 border-b border-[#44474e] font-['Manrope:Regular',sans-serif] font-normal h-[130px] leading-[24px] outline-none pb-[18px] pt-[2px] resize-none text-[16px] text-[#e1e3e4] transition-colors w-full placeholder:text-[rgba(196,198,207,0.4)] focus:border-[#ffce1b]"
+        name="brief"
+        onChange={(event) => onChange("brief", event.target.value)}
+        placeholder="Briefly describe your project requirements..."
+        required
+        value={value}
+      />
+    </label>
+  );
+}
+
+function Form() {
+  const [values, setValues] = useState<InquiryFormValues>({
+    name: "",
+    email: "",
+    phone: "",
+    brief: "",
+  });
+  const [status, setStatus] = useState("");
+
+  const updateValue = (name: keyof InquiryFormValues, value: string) => {
+    setValues((current) => ({ ...current, [name]: value }));
+    setStatus("");
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const subject = encodeURIComponent(`Project inquiry from ${values.name}`);
+    const body = encodeURIComponent(
+      `Project Contact: ${values.name}\nEmail Address: ${values.email}\nPhone Number: ${values.phone}\n\nProject Brief:\n${values.brief}`,
+    );
+
+    window.location.href = `mailto:info@nanda-kailash.in?subject=${subject}&body=${body}`;
+    setStatus("Thank you. Your inquiry is ready to send from your email app.");
+  };
+
+  return (
+    <form className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full" data-name="Form" onSubmit={handleSubmit}>
+      <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] relative shrink-0 w-full" data-name="Container">
+        <InquiryField label="PROJECT CONTACT" name="name" onChange={updateValue} placeholder="Full Name" value={values.name} />
+        <InquiryField label="EMAIL ADDRESS" name="email" onChange={updateValue} placeholder="Corporate Email" type="email" value={values.email} />
+      </div>
+      <InquiryField label="PHONE NUMBER" name="phone" onChange={updateValue} placeholder="+ 1234567890" type="tel" value={values.phone} />
+      <InquiryTextarea onChange={updateValue} value={values.brief} />
+      <button className="bg-[#355d9b] border-0 content-stretch cursor-pointer flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0 w-[208px]" data-name="Button" type="submit">
         <p className="[word-break:break-word] capitalize font-['Inter:Regular',sans-serif] font-normal leading-[26px] not-italic relative shrink-0 text-[16px] text-center text-white whitespace-nowrap">SEND MESSAGE</p>
         <Icon1 />
-      </div>
-    </div>
+      </button>
+      {status ? <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[24px] not-italic text-[14px] text-[#ffce1b]">{status}</p> : null}
+    </form>
   );
 }
 
