@@ -138,6 +138,11 @@ export default function App() {
       <ServiceSuryeys
         onNavigateAbout={() => navigateTo("about")}
         onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
@@ -147,6 +152,11 @@ export default function App() {
       <SolarWindPage
         onNavigateAbout={() => navigateTo("about")}
         onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
@@ -198,6 +208,11 @@ export default function App() {
       <Projects
         onNavigateAbout={() => navigateTo("about")}
         onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
@@ -207,6 +222,11 @@ export default function App() {
       <Sustainability
         onNavigateAbout={() => navigateTo("about")}
         onNavigateHome={() => navigateTo("home")}
+        onNavigateLandSurveying={() => navigateTo("landSurveying")}
+        onNavigateSolarWind={() => navigateTo("solarWind")}
+        onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}
+        onNavigateElectricWork={() => navigateTo("electricWork")}
+        onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}

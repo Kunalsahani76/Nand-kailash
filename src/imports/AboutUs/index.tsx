@@ -1,4 +1,5 @@
 import svgPaths from "./svg-5euhhvgapu";
+import { useEffect, useState } from "react";
 import imgFrame188 from "./9beb7f14fb67041f0abdd5e7e0bd05eed0e7733c.png";
 import imgBridgeConstruction from "./42a1bc2d877cc5ec2fefdcc3d0c7a350783d775b.png";
 import imgBridgeConstruction1 from "./76b8d323496c8a474dc413e55fed46b9071ed3e5.png";
@@ -16,6 +17,10 @@ import imgImpactSection from "./9a4d4c14edb9fde255fedb215c49569dbf1f10d2.png";
 import imgFrame251 from "./b7630425d6ae0fc80f6b8e21efb3e7d5b29986ea.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
+import imgSolarProjectsCarousel from "@/images/Solar Projects.jpg";
+import imgIndustrialInfrastructureCarousel from "@/images/Industrial Infrastructure.jpg";
+import imgCommercialBuildingsCarousel from "@/images/Commercial Buildings.jpg";
+import imgRoadsHighwaysCarousel from "@/images/Roads & Highways.jpg";
 import websiteIcon from "@/images/website icon.png";
 
 type AboutUsProps = {
@@ -42,6 +47,13 @@ const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
+];
+
+const aboutNkidCarouselImages = [
+  { label: "Solar Projects", image: imgSolarProjectsCarousel },
+  { label: "Industrial Infrastructure", image: imgIndustrialInfrastructureCarousel },
+  { label: "Commercial Buildings", image: imgCommercialBuildingsCarousel },
+  { label: "Roads & Highways", image: imgRoadsHighwaysCarousel },
 ];
 
 function Overlay() {
@@ -419,6 +431,32 @@ function BridgeConstruction3() {
   );
 }
 
+function AboutNkidCarousel() {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % aboutNkidCarouselImages.length);
+    }, 3500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden rounded-[24px]" data-name="About NKID Carousel">
+      {aboutNkidCarouselImages.map((item, index) => (
+        <img
+          key={item.label}
+          alt={item.label}
+          className={`absolute inset-0 max-w-none object-cover size-full transition-opacity duration-700 ease-out ${index === activeImage ? "opacity-100" : "opacity-0"}`}
+          src={item.image}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.28)] via-[rgba(0,0,0,0.02)] to-[rgba(0,0,0,0.12)] pointer-events-none" />
+    </div>
+  );
+}
+
 function Frame37() {
   return (
     <div className="relative shrink-0 w-full" data-name="Section - About NKID">
@@ -426,10 +464,7 @@ function Frame37() {
         <div className="content-stretch flex items-center justify-between px-[40px] py-[30px] relative size-full">
           <Frame36 />
           <div className="h-[579px] overflow-clip relative rounded-[24px] shrink-0 w-[584px]" data-name="Component 23">
-            <BridgeConstruction />
-            <BridgeConstruction1 />
-            <BridgeConstruction2 />
-            <BridgeConstruction3 />
+            <AboutNkidCarousel />
           </div>
         </div>
       </div>
@@ -1652,7 +1687,7 @@ function Container44() {
 function Paragraph() {
   return (
     <div className="flex-[1_0_0] min-h-px relative w-[224px]" data-name="Paragraph">
-      <p className="[word-break:break-word] absolute capitalize font-['Inter:Regular',sans-serif] font-normal leading-[32px] left-0 not-italic text-[18px] text-black top-[-0.5px] w-[314px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[23px] left-0 not-italic text-[16px] text-black top-[-0.5px] w-[223px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
     </div>
   );
 }

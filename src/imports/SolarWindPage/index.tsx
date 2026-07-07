@@ -15,14 +15,27 @@ const hanken = "'Hanken Grotesk', sans-serif";
 type SolarWindPageProps = {
   onNavigateAbout?: () => void;
   onNavigateHome?: () => void;
+  onNavigateLandSurveying?: () => void;
+  onNavigateSolarWind?: () => void;
+  onNavigateBuildingConstruction?: () => void;
+  onNavigateElectricWork?: () => void;
+  onNavigateBuildingManagement?: () => void;
   onNavigateProjects?: () => void;
   onNavigateSustainability?: () => void;
   onNavigateCareers?: () => void;
   onNavigateContact?: () => void;
 };
 
+const serviceDropdownItems = [
+  { label: "Land Surveying", onClick: "landSurveying" },
+  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Building Construction", onClick: "buildingConstruction" },
+  { label: "Electric Related Work", onClick: "electricWork" },
+  { label: "Building Management", onClick: "buildingManagement" },
+] as const;
+
 /* ─── Navbar ─── */
-function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
+function Navbar({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,12 +48,19 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
   const links = [
     { label: "Home", onClick: onNavigateHome },
     { label: "About Us", onClick: onNavigateAbout },
-    { label: "Services" },
     { label: "Projects", onClick: onNavigateProjects },
     { label: "Sustainability", onClick: onNavigateSustainability },
     { label: "Careers", onClick: onNavigateCareers },
     { label: "Contact Us", onClick: onNavigateContact },
   ];
+
+  const serviceHandlers = {
+    landSurveying: onNavigateLandSurveying,
+    solarWind: onNavigateSolarWind,
+    buildingConstruction: onNavigateBuildingConstruction,
+    electricWork: onNavigateElectricWork,
+    buildingManagement: onNavigateBuildingManagement,
+  };
 
   return (
     <nav
@@ -53,7 +73,45 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-1">
-          {links.map((link) => (
+          {links.slice(0, 2).map((link) => (
+            <a
+              key={link.label}
+              href="#"
+              onClick={(event) => {
+                if (link.onClick) {
+                  event.preventDefault();
+                  link.onClick();
+                }
+              }}
+              className="px-[10px] py-[10px] text-[16px] text-[#404040] whitespace-nowrap"
+              style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="group relative">
+            <a
+              className="block px-[10px] py-[10px] text-[16px] text-[#404040] whitespace-nowrap"
+              href="#"
+              onClick={(event) => event.preventDefault()}
+              style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}
+            >
+              Services
+            </a>
+            <div className="absolute hidden group-hover:flex group-focus-within:flex flex-col left-1/2 top-[41px] -translate-x-1/2 w-[270px] z-[60]">
+              {serviceDropdownItems.map((item) => (
+                <button
+                  className="bg-white border border-[#404040] cursor-pointer flex h-[35px] items-center justify-start px-[12px] text-left w-full"
+                  key={item.label}
+                  onClick={serviceHandlers[item.onClick]}
+                  type="button"
+                >
+                  <span className="text-[#404040] text-[16px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>{item.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          {links.slice(2).map((link) => (
             <a
               key={link.label}
               href="#"
@@ -110,6 +168,25 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
               {link.label}
             </a>
           ))}
+          <div className="py-2">
+            <p className="py-2 text-[16px] text-[#404040]" style={{ fontFamily: inter, fontWeight: 500 }}>
+              Services
+            </p>
+            {serviceDropdownItems.map((item) => (
+              <button
+                className="block w-full border-b border-[rgba(64,64,64,0.1)] py-2 pl-4 text-left text-[15px] text-[#404040]"
+                key={item.label}
+                onClick={() => {
+                  setOpen(false);
+                  serviceHandlers[item.onClick]?.();
+                }}
+                type="button"
+                style={{ fontFamily: inter, fontWeight: 500 }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
           <a
             href="#"
             className="mt-4 inline-flex items-center justify-center px-[10px] py-[10px] rounded-[4px] text-[14px] text-[#404040]"
@@ -597,7 +674,7 @@ function Footer() {
   const services = ["Infrastructure Development", "Building Construction", "Solar Projects", "Land Surveying", "Electrical Infrastructure", "Maintenance Services"];
 
   return (
-    <footer className="relative w-full">
+    <footer className="relative h-[485.625px] w-full overflow-hidden shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" data-name="Footer">
       {/* Background image */}
       <img
         src={imgFooterBg}
@@ -606,25 +683,25 @@ function Footer() {
         style={{ opacity: 0.68 }}
       />
       {/* White overlay to make footer light */}
-      <div className="absolute inset-0 bg-white/80" />
+      <div className="hidden absolute inset-0 bg-white/80" />
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex h-full flex-col">
         {/* Main footer content */}
-        <div className="px-6 md:px-10 lg:px-[64px] pt-[80px] pb-[40px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+        <div className="h-[417.125px] px-[64px] pt-[80px]">
+          <div className="flex items-center justify-between">
             {/* Column 1: Logo + About */}
-            <div className="flex flex-col gap-[12px]">
+            <div className="flex h-[273px] w-[314px] flex-col gap-[12px]">
               <div className="relative h-[49px] w-[73px]">
                 <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <p
-                className="text-black text-[16px] md:text-[18px] capitalize leading-[32px] max-w-[314px]"
+                className="text-black text-[16px] leading-[23px] w-[223px]"
                 style={{ fontFamily: inter, fontWeight: 400 }}
               >
                 {"Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more."}
               </p>
               {/* Social icons */}
-              <div className="flex gap-[12px] mt-2">
+              <div className="flex gap-[12px]">
                 {/* X / Twitter */}
                 <a
                   href="#"
@@ -671,7 +748,7 @@ function Footer() {
             </div>
 
             {/* Column 2: Quick Links */}
-            <div className="flex flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[179px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.36)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -695,7 +772,7 @@ function Footer() {
             </div>
 
             {/* Column 3: Services */}
-            <div className="flex flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[177px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.26)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -719,7 +796,7 @@ function Footer() {
             </div>
 
             {/* Column 4: Contact */}
-            <div className="flex flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[203px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.26)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -770,19 +847,19 @@ function Footer() {
         </div>
 
         {/* Copyright bar */}
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.56)" }}>
+        <div className="h-[68.5px] pt-px" style={{ borderTop: "1px solid rgba(255,255,255,0.56)" }}>
           <div
-            className="flex flex-col sm:flex-row items-center justify-between gap-2 px-6 md:px-10 lg:px-[64px] py-[24px]"
+            className="flex h-[67.5px] items-center justify-between px-[64px] py-[24px]"
             style={{ backgroundColor: "#0b1f3a" }}
           >
             <p
-              className="text-white text-[13px] text-center sm:text-left"
+              className="text-white text-[13px]"
               style={{ fontFamily: inter, fontWeight: 400, lineHeight: "19.5px" }}
             >
               © 2026 Nanda Kailash Infrastructure &amp; Developers. All rights reserved.
             </p>
             <p
-              className="text-white text-[13px] text-center sm:text-right"
+              className="text-white text-[13px]"
               style={{ fontFamily: inter, fontWeight: 400, lineHeight: "19.5px" }}
             >
               Infrastructure Company in India | Construction | Solar | Engineering
@@ -795,10 +872,10 @@ function Footer() {
 }
 
 /* ─── App ─── */
-export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
+export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   return (
     <div className="w-full min-h-screen bg-white" data-name="SOLAR WIND">
-      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
+      <Navbar onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
       <main>
         <HeroSection />
         <AboutSection />

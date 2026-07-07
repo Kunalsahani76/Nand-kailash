@@ -47,6 +47,39 @@ const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Building Management", onClick: "buildingManagement" },
 ];
 
+const coreServices = [
+  {
+    title: "Infrastructure Development",
+    description: "Roads, highways, industrial projects, and public infrastructure built to last generations.",
+    image: imgFrame136,
+  },
+  {
+    title: "Building Construction",
+    description: "Commercial and residential construction solutions with precision engineering and quality assurance.",
+    image: imgFrame137,
+  },
+  {
+    title: "Solar Infrastructure",
+    description: "Renewable energy and solar infrastructure development for a sustainable tomorrow.",
+    image: imgFrame138,
+  },
+  {
+    title: "Land Surveying",
+    description: "Accurate surveying and planning solutions using advanced technology and expertise.",
+    image: imgFrame139,
+  },
+  {
+    title: "Electrical Infrastructure",
+    description: "Industrial and commercial electrical systems designed for safety and efficiency.",
+    image: imgFrame140,
+  },
+  {
+    title: "Maintenance Services",
+    description: "Long-term maintenance and support services to protect your infrastructure investment.",
+    image: imgFrame141,
+  },
+];
+
 function Icon() {
   return <div className="absolute left-[534px] size-[32px] top-[702px]" data-name="Icon" />;
 }
@@ -363,57 +396,30 @@ function Container1() {
   );
 }
 
+function CoreServiceCard({ title, description, image }: (typeof coreServices)[number]) {
+  return (
+    <div className="group h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[437px]">
+      <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
+        <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full transition-transform duration-500 ease-out group-hover:scale-[1.04]" src={image} />
+        <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0.08)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.75)] transition-opacity duration-500 ease-out group-hover:opacity-0" />
+        <div className="absolute inset-0 rounded-[12px] bg-[rgba(0,0,0,0.52)] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
+      </div>
+      <div className="absolute bottom-[28px] left-[16px] right-[16px] translate-y-[48px] transition-transform duration-500 ease-out group-hover:translate-y-0">
+        <p className="[word-break:break-word] font-['Poppins:Bold',sans-serif] leading-[1.2] not-italic text-[22.31px] text-white">{title}</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[23.606px] mt-[12px] not-italic opacity-0 text-[15.74px] text-white tracking-[0.5px] transition-all duration-500 ease-out group-hover:opacity-100">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Frame40() {
   return (
     <div className="gap-x-[31px] gap-y-[31px] grid grid-cols-[repeat(3,fit-content(100%))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
-      <div className="h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[437px]">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame136} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.7)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.183px] left-[15.75px] not-italic text-[22.31px] text-white top-[242.78px] whitespace-nowrap">Infrastructure Development</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.622px] left-[15.75px] not-italic opacity-0 text-[15.75px] text-white top-[279.51px] tracking-[0.5px] w-[314.299px]">Roads, highways, industrial projects, and public infrastructure built to last generations.</p>
-      </div>
-      <div className="h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[437px]">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame137} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.7)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.183px] left-[15.75px] not-italic text-[22.31px] text-white top-[242.77px] whitespace-nowrap">Building Construction</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.621px] left-[15.75px] not-italic opacity-0 text-[15.75px] text-white top-[279.5px] tracking-[0.5px] w-[320.2px]">Commercial and residential construction solutions with precision engineering and quality assurance.</p>
-      </div>
-      <div className="h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[436.72px]">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame138} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.7)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.171px] left-[15.74px] not-italic text-[22.3px] text-white top-[242.62px] whitespace-nowrap">Solar Infrastructure</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.606px] left-[15.74px] not-italic opacity-0 text-[15.74px] text-white top-[279.33px] tracking-[0.5px] w-[343.606px]">Renewable energy and solar infrastructure development for a sustainable tomorrow.</p>
-      </div>
-      <div className="h-[318px] justify-self-stretch overflow-clip relative rounded-[12px] shrink-0">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame139} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.7)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.171px] left-[15.74px] not-italic text-[22.3px] text-white top-[242.62px] whitespace-nowrap">Land Surveying</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.606px] left-[15.74px] not-italic opacity-0 text-[15.74px] text-white top-[279.33px] tracking-[0.5px] w-[342.95px]">Accurate surveying and planning solutions using advanced technology and expertise.</p>
-      </div>
-      <div className="justify-self-stretch overflow-clip relative rounded-[12px] self-stretch shrink-0">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame140} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.9)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.171px] left-[15.74px] not-italic text-[22.3px] text-white top-[242.62px] whitespace-nowrap">Electrical Infrastructure</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.606px] left-[15.74px] not-italic opacity-0 text-[15.74px] text-white top-[279.33px] tracking-[0.5px] w-[359.999px]">Industrial and commercial electrical systems designed for safety and efficiency.</p>
-      </div>
-      <div className="justify-self-stretch overflow-clip relative rounded-[12px] self-stretch shrink-0">
-        <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
-          <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src={imgFrame141} />
-          <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.9)]" />
-        </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold',sans-serif] leading-[18.171px] left-[15.74px] not-italic text-[22.3px] text-white top-[242.62px] whitespace-nowrap">Maintenance Services</p>
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[23.606px] left-[15.74px] not-italic opacity-0 text-[15.74px] text-white top-[279.33px] tracking-[0.5px] w-[344.261px]">Long-term maintenance and support services to protect your infrastructure investment.</p>
-      </div>
+      {coreServices.map((service) => (
+        <CoreServiceCard key={service.title} {...service} />
+      ))}
     </div>
   );
 }

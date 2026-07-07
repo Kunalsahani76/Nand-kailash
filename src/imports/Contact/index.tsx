@@ -20,6 +20,19 @@ type ContactProps = {
   onNavigateContact?: () => void;
 };
 
+type ServiceDropdownItem = {
+  label: string;
+  onClick?: "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
+};
+
+const serviceDropdownItems: ServiceDropdownItem[] = [
+  { label: "Land Surveying", onClick: "landSurveying" },
+  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Building Construction", onClick: "buildingConstruction" },
+  { label: "Electric Related Work", onClick: "electricWork" },
+  { label: "Building Management", onClick: "buildingManagement" },
+];
+
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[768px] relative shrink-0" data-name="Heading 1">
@@ -1105,7 +1118,7 @@ function Container34() {
 function Paragraph() {
   return (
     <div className="flex-[1_0_0] min-h-px relative w-[224px]" data-name="Paragraph">
-      <p className="[word-break:break-word] absolute capitalize font-['Inter:Regular',sans-serif] font-normal leading-[32px] left-0 not-italic text-[18px] text-black top-[-0.5px] w-[314px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[23px] left-0 not-italic text-[16px] text-black top-[-0.5px] w-[223px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
     </div>
   );
 }
@@ -1725,7 +1738,7 @@ function Frame6() {
   return <div className="bg-[#404040] h-[3px] relative shrink-0 w-0" />;
 }
 
-function Frame7({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: ContactProps) {
+function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: ContactProps) {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
       <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateHome} type="button">
@@ -1736,9 +1749,21 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">About Us</p>
         <Frame1 />
       </button>
-      <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
+      <div className="content-stretch flex flex-col group items-start justify-center p-[10px] relative shrink-0">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Services</p>
         <Frame2 />
+        <div className="absolute hidden group-hover:flex group-focus-within:flex flex-col left-1/2 top-[51px] -translate-x-1/2 w-[270px] z-[60]">
+          {serviceDropdownItems.map((item) => (
+            <button
+              className="bg-white border border-[#404040] content-stretch cursor-pointer flex items-center justify-start h-[35px] px-[12px] text-left w-full"
+              key={item.label}
+              onClick={item.onClick === "landSurveying" ? onNavigateLandSurveying : item.onClick === "solarWind" ? onNavigateSolarWind : item.onClick === "buildingConstruction" ? onNavigateBuildingConstruction : item.onClick === "electricWork" ? onNavigateElectricWork : item.onClick === "buildingManagement" ? onNavigateBuildingManagement : undefined}
+              type="button"
+            >
+              <span className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">{item.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
       <button className="bg-transparent border-0 content-stretch cursor-pointer flex flex-col items-start justify-center p-[10px] relative shrink-0" onClick={onNavigateProjects} type="button">
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Projects</p>
@@ -1760,7 +1785,7 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigat
   );
 }
 
-export default function Contact({ onNavigateAbout, onNavigateHome, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: ContactProps) {
+export default function Contact({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: ContactProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center justify-center relative size-full" data-name="CONTACT">
       <Frame12 />
@@ -1776,7 +1801,7 @@ export default function Contact({ onNavigateAbout, onNavigateHome, onNavigatePro
       <div className="bg-white content-stretch flex fixed items-center justify-between left-0 px-[120px] py-[10px] shadow-[0px_2px_8px_rgba(0,0,0,0.12)] top-0 w-[1440px] z-50" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame10 />
-        <Frame7 onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
+        <Frame7 onNavigateAbout={onNavigateAbout} onNavigateHome={onNavigateHome} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
         <div className="bg-[#fafafa] content-stretch flex items-center justify-center p-[10px] relative rounded-[4px] shrink-0">
           <div aria-hidden className="absolute border-[#ffce1b] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[4px]" />
           <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[21px] not-italic relative shrink-0 text-[#404040] text-[14px] text-center whitespace-nowrap">Get Consultation</p>
