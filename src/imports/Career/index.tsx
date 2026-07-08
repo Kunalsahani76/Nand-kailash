@@ -1,4 +1,4 @@
-import svgPaths from "./svg-i0p7wpqw75";
+﻿import svgPaths from "./svg-i0p7wpqw75";
 import imgFrame261 from "./4cf18b96a3836e4192fbb280d5b10c8d1534feae.png";
 import imgAirports from "./b2631b0c40056c6890f434ae645566992a345674.png";
 import imgSolar from "./a6cb73497fac32cb3b115f9d7c69251734940ee7.png";
@@ -66,7 +66,7 @@ function Frame19() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full">
       <Margin />
-      <p className="[word-break:break-word] capitalize font-['Sora:ExtraBold',sans-serif] font-extrabold leading-[1.1] relative shrink-0 text-[64px] text-white tracking-[-1.28px] w-[743px]">buid india’s future with us</p>
+      <p className="[word-break:break-word] capitalize font-['Sora:ExtraBold',sans-serif] font-extrabold leading-[1.1] relative shrink-0 text-[64px] text-white tracking-[-1.28px] w-[743px]">buid indiaâ€™s future with us</p>
     </div>
   );
 }
@@ -2386,11 +2386,13 @@ function Icon7() {
 
 function Container76() {
   return (
-    <div className="[word-break:break-word] absolute h-[68px] left-[28px] not-italic text-black top-0 w-[139.906px]" data-name="Container">
+    <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[140px]">
-        <p className="leading-[21px] mb-0">New Delhi, India</p>
-        <p className="leading-[21px]">Pan-India Operations</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[190px]">
+        <p className="leading-[21px] mb-0">544, DLF Prime Towers,</p>
+        <p className="leading-[21px] mb-0">F-79 &amp; 80, Okhla Industrial</p>
+        <p className="leading-[21px] mb-0">Area Phase - 1,</p>
+        <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>
   );
@@ -2451,7 +2453,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

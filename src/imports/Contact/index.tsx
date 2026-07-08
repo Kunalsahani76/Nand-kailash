@@ -1,4 +1,4 @@
-import svgPaths from "./svg-ir258knxg6";
+﻿import svgPaths from "./svg-ir258knxg6";
 import imgFrame261 from "./9581c1df52e5cbcdc283bbd4f517a12ffaf69d49.png";
 import imgAb6AXuDcKAzknQAlWPfReUSvHfmbl4TfTsTolkWmPwXQdxe6MxlKjfHh0Dc7L436UksuepyVux5DIrHmhwxbaZDsptK3FyMjv2CsXt46SLhlzOnFjWlJ8C9IvyOl9Qvy3458T8ZroKkce0BbvSf8QYlAex0RkeqRrfV5G44YU8GaNnvIXxHtiznDpQ2Iq8Z3VJhPcrfcVmtJhov5URucoUj7Yh3WPvzG15WIxUi7N3Qq5ElTlghOK2T2Vf0Mf0UJpBxKcNxdWyQsuv from "./3894bde64a9ece66b50901f566ae343facb35d4e.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
@@ -109,7 +109,7 @@ function Container() {
 
 function BackgroundBorder() {
   return (
-    <div className="bg-[#375f9d] relative rounded-[12px] shrink-0 size-[48px]" data-name="Background+Border">
+    <div className="bg-[#375f9d] relative rounded-[14px] shrink-0 size-[64px]" data-name="Background+Border">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
         <Container />
       </div>
@@ -120,8 +120,8 @@ function BackgroundBorder() {
 function Heading2() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[32px] text-center whitespace-nowrap">
-        <p className="leading-[40px]">Phone</p>
+      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[42px] text-center whitespace-nowrap">
+        <p className="leading-[52px]">Phone</p>
       </div>
     </div>
   );
@@ -140,13 +140,13 @@ function Heading3Margin() {
 function OverlayBorderOverlayBlur() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[357px]" data-name="Overlay+Border+OverlayBlur">
+      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[12px] shrink-0 to-[rgba(153,153,153,0.1)] w-[380px]" data-name="Overlay+Border+OverlayBlur">
         <div className="flex flex-col items-center justify-center size-full">
-          <div className="content-stretch flex flex-col gap-[16px] items-center justify-center pb-[20px] pt-[39px] px-[10px] relative size-full">
+          <div className="content-stretch flex flex-col gap-[22px] items-center justify-center px-[28px] relative size-full">
             <BackgroundBorder />
             <Heading3Margin />
-            <div className="[word-break:break-word] flex flex-col font-['Poppins:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[-0.35px] whitespace-nowrap">
-              <p className="leading-[20px]">+91 9773944770 (Mobile)</p>
+            <div className="[word-break:break-word] flex flex-col font-['Poppins:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-center text-white tracking-[-0.35px] whitespace-nowrap">
+              <p className="leading-[28px]">+91 9773944770 (Mobile)</p>
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ function OverlayBorderOverlayBlur() {
 
 function BackgroundBorder1() {
   return (
-    <div className="relative shrink-0 size-[48px]" data-name="Background+Border">
+    <div className="relative shrink-0 size-[64px]" data-name="Background+Border">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 48 48">
         <g id="Background+Border">
           <rect fill="var(--fill-0, #375F9D)" height="48" rx="12" width="48" />
@@ -171,8 +171,8 @@ function BackgroundBorder1() {
 function Heading3() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[32px] text-center whitespace-nowrap">
-        <p className="leading-[40px]">Address</p>
+      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[42px] text-center whitespace-nowrap">
+        <p className="leading-[52px]">Address</p>
       </div>
     </div>
   );
@@ -193,8 +193,8 @@ function Container1() {
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center px-[3.86px] relative size-full">
-          <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[16px] text-center w-full">
-            <p className="leading-[26px]">{`Nanda Kailash Infrastructure & Developers Private Limited, #544, DLF Prime Towers, F – 79 & 80, Okhla Industrial Area Phase – 1, New Delhi – 110020. INDIA.`}</p>
+          <div className="[&_p]:leading-[35px] [word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[22px] text-center w-full">
+            <p className="leading-[26px]">{`Nanda Kailash Infrastructure & Developers Private Limited, #544, DLF Prime Towers, F â€“ 79 & 80, Okhla Industrial Area Phase â€“ 1, New Delhi â€“ 110020. INDIA.`}</p>
           </div>
         </div>
       </div>
@@ -205,9 +205,9 @@ function Container1() {
 function OverlayBorderOverlayBlur1() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[489px]" data-name="Overlay+Border+OverlayBlur">
+      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[12px] shrink-0 to-[rgba(153,153,153,0.1)] w-[560px]" data-name="Overlay+Border+OverlayBlur">
         <div className="flex flex-col items-center justify-center size-full">
-          <div className="content-stretch flex flex-col gap-[14px] items-center justify-center px-[10px] py-[20px] relative size-full">
+          <div className="content-stretch flex flex-col gap-[18px] items-center justify-center px-[30px] relative size-full">
             <BackgroundBorder1 />
             <Heading3Margin1 />
             <Container1 />
@@ -220,7 +220,7 @@ function OverlayBorderOverlayBlur1() {
 
 function BackgroundBorder2() {
   return (
-    <div className="relative shrink-0 size-[48px]" data-name="Background+Border">
+    <div className="relative shrink-0 size-[64px]" data-name="Background+Border">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 48 48">
         <g id="Background+Border">
           <rect fill="var(--fill-0, #375F9D)" height="48" rx="12" width="48" />
@@ -234,8 +234,8 @@ function BackgroundBorder2() {
 function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[32px] text-center whitespace-nowrap">
-        <p className="leading-[40px]">{`Email & Timings`}</p>
+      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e1e3e4] text-[42px] text-center whitespace-nowrap">
+        <p className="leading-[52px]">{`Email & Timings`}</p>
       </div>
     </div>
   );
@@ -254,8 +254,8 @@ function Heading3Margin2() {
 function Container3() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[16px] text-center whitespace-nowrap">
-        <p className="leading-[26px]">arjun@nanda-kailash.in</p>
+      <div className="[&_p]:leading-[31px] [word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[22px] text-center whitespace-nowrap">
+        <p className="leading-[31px]">arjun@nanda-kailash.in</p>
       </div>
     </div>
   );
@@ -264,8 +264,8 @@ function Container3() {
 function Container4() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[16px] text-center whitespace-nowrap">
-        <p className="leading-[26px]">info@nanda-kailash.in</p>
+      <div className="[&_p]:leading-[31px] [word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[22px] text-center whitespace-nowrap">
+        <p className="leading-[31px]">info@nanda-kailash.in</p>
       </div>
     </div>
   );
@@ -274,8 +274,8 @@ function Container4() {
 function Container5() {
   return (
     <div className="content-stretch flex flex-col items-center pt-[16px] relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e9c176] text-[12px] text-center tracking-[1.2px] uppercase whitespace-nowrap">
-        <p className="leading-[16px]">WORKING HOURS</p>
+      <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e9c176] text-[16px] text-center tracking-[1.6px] uppercase whitespace-nowrap">
+        <p className="leading-[22px]">WORKING HOURS</p>
       </div>
     </div>
   );
@@ -284,8 +284,8 @@ function Container5() {
 function Container6() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[16px] text-center whitespace-nowrap">
-        <p className="leading-[26px]">Monday to Friday: 9 am – 5 pm.</p>
+      <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[22px] text-center whitespace-nowrap">
+        <p className="leading-[26px]">Monday to Friday: 9 am â€“ 5 pm.</p>
       </div>
     </div>
   );
@@ -293,7 +293,7 @@ function Container6() {
 
 function Container2() {
   return (
-    <div className="relative shrink-0 w-[243px]" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3px] items-start relative size-full">
         <Container3 />
         <Container4 />
@@ -307,9 +307,9 @@ function Container2() {
 function OverlayBorderOverlayBlur2() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[357px]" data-name="Overlay+Border+OverlayBlur">
+      <div className="bg-gradient-to-b from-[rgba(255,255,255,0.1)] h-full relative rounded-[12px] shrink-0 to-[rgba(153,153,153,0.1)] w-[380px]" data-name="Overlay+Border+OverlayBlur">
         <div className="flex flex-col items-center justify-center size-full">
-          <div className="content-stretch flex flex-col gap-[15px] items-center justify-center px-[10px] py-[20px] relative size-full">
+          <div className="content-stretch flex flex-col gap-[18px] items-center justify-center px-[28px] relative size-full">
             <BackgroundBorder2 />
             <Heading3Margin2 />
             <Container2 />
@@ -322,9 +322,9 @@ function OverlayBorderOverlayBlur2() {
 
 function Frame20() {
   return (
-    <div className="bg-[#212121] h-[533px] relative shrink-0 w-full">
+    <div className="bg-[#212121] h-[451px] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex items-center justify-between px-[70px] py-[120px] relative size-full">
+        <div className="content-stretch flex items-center justify-between px-[18px] py-[30px] relative size-full">
           <OverlayBorderOverlayBlur />
           <OverlayBorderOverlayBlur1 />
           <OverlayBorderOverlayBlur2 />
@@ -1589,11 +1589,13 @@ function Icon7() {
 
 function Container45() {
   return (
-    <div className="[word-break:break-word] absolute h-[68px] left-[28px] not-italic text-black top-0 w-[139.906px]" data-name="Container">
+    <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[140px]">
-        <p className="leading-[21px] mb-0">New Delhi, India</p>
-        <p className="leading-[21px]">Pan-India Operations</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[190px]">
+        <p className="leading-[21px] mb-0">544, DLF Prime Towers,</p>
+        <p className="leading-[21px] mb-0">F-79 &amp; 80, Okhla Industrial</p>
+        <p className="leading-[21px] mb-0">Area Phase - 1,</p>
+        <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>
   );
@@ -1654,7 +1656,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

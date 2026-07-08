@@ -1,4 +1,4 @@
-import svgPaths from "./svg-5ikxwp104h";
+﻿import svgPaths from "./svg-5ikxwp104h";
 import imgFrame261 from "./b2758aaaa124ac6bcdffd816b4507ae250378fb2.png";
 import imgAb6AXuDvN1Qzvim0EFxc9IxOzfTeJw2MXpkbt3On4570AR1XXiFwxqyz3YwxBxX5Uzatp6D1YUNvCFnOhPg28UClTbgMQcDhXvWxP81Yh0JlyaJr6Gov2Nle5AXixDEc9SqWWSlwcs2IePrFsLxcWgmfhuJqIfbi9R3RGugy9P9MWtEl7XqXxBebYprsRrOwb1OaxePcfrFz8FwYn6Wdaf1HVsSq4HzlHEjPkhHatoiflmvxq0EHutUQtIjI9LDfpWw1OsW13W2DyKo from "./889e9cc9d53bb52eeebefde48e37dbcc631a5ce4.png";
 import imgAb6AXuAupm9Bg4ABmUxr1HxGWs644QXrbJ2ETaap3A150XiwllApSMzgIkcQgw11Ck9I3EjI74YOyGGqos42YJdQJskdrplImANsWBdzowI1W9V4DsV1KjmVd5JYkciVf8Ur3IKjDItpSe3Q2CvJITjObtXdWroK2EaCpMqNnDChaD4D5Z7Bl2Grlq3MdQd3RdYhXkLtsjk3NRgKs0M3JLxgv6Uiqv1VI2QNvSSnyqIcioo6GpDKoBjhNmCvSJkXZpek6Gb7Nc from "./176f030a161188c3b0c693964dc9eb672ee7fb0e.png";
@@ -2674,11 +2674,13 @@ function Icon6() {
 
 function Container92() {
   return (
-    <div className="[word-break:break-word] absolute h-[68px] left-[28px] not-italic text-black top-0 w-[139.906px]" data-name="Container">
+    <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[140px]">
-        <p className="leading-[21px] mb-0">New Delhi, India</p>
-        <p className="leading-[21px]">Pan-India Operations</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[190px]">
+        <p className="leading-[21px] mb-0">544, DLF Prime Towers,</p>
+        <p className="leading-[21px] mb-0">F-79 &amp; 80, Okhla Industrial</p>
+        <p className="leading-[21px] mb-0">Area Phase - 1,</p>
+        <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>
   );
@@ -2741,7 +2743,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

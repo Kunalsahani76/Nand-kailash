@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import svgPaths from "@/imports/SoloarWind/svg-0199klzz0k";
 import imgHero from "@/imports/SoloarWind/3ff1ce590410f2da4862b33d06404660ec0e7a65.png";
 import imgAbout from "@/imports/SoloarWind/3d34e7fd5b4bc7ce76b764d4b677991c3aeee310.png";
@@ -34,7 +34,7 @@ const serviceDropdownItems = [
   { label: "Building Management", onClick: "buildingManagement" },
 ] as const;
 
-/* ─── Navbar ─── */
+/* â”€â”€â”€ Navbar â”€â”€â”€ */
 function Navbar({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -200,7 +200,7 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
   );
 }
 
-/* ─── Hero Section ─── */
+/* â”€â”€â”€ Hero Section â”€â”€â”€ */
 function HeroSection() {
   return (
     <section className="relative w-full min-h-[580px] lg:min-h-[749px] overflow-hidden">
@@ -315,7 +315,7 @@ function HeroSection() {
   );
 }
 
-/* ─── About Section ─── */
+/* â”€â”€â”€ About Section â”€â”€â”€ */
 function AboutSection() {
   return (
     <section className="w-full bg-white">
@@ -370,7 +370,7 @@ function AboutSection() {
   );
 }
 
-/* ─── Development Process Section ─── */
+/* â”€â”€â”€ Development Process Section â”€â”€â”€ */
 function DevelopmentProcessSection() {
   const steps = [
     {
@@ -542,7 +542,7 @@ function DevelopmentProcessSection() {
   );
 }
 
-/* ─── Key Infrastructure Components ─── */
+/* â”€â”€â”€ Key Infrastructure Components â”€â”€â”€ */
 function KeyComponentsSection() {
   const cards = [
     {
@@ -632,7 +632,7 @@ function KeyComponentsSection() {
   );
 }
 
-/* ─── IoT Monitoring Section ─── */
+/* â”€â”€â”€ IoT Monitoring Section â”€â”€â”€ */
 function IoTMonitoringSection() {
   return (
     <section
@@ -668,7 +668,7 @@ function IoTMonitoringSection() {
   );
 }
 
-/* ─── Footer ─── */
+/* â”€â”€â”€ Footer â”€â”€â”€ */
 function Footer() {
   const quickLinks = ["Home", "About Us", "Services", "Projects", "Careers", "Contact"];
   const services = ["Infrastructure Development", "Building Construction", "Solar Projects", "Land Surveying", "Electrical Infrastructure", "Maintenance Services"];
@@ -837,8 +837,10 @@ function Footer() {
                   </svg>
                   <div>
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>ADDRESS</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi, India</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Pan-India Operations</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers,</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>F-79 &amp; 80, Okhla Industrial</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Area Phase - 1,</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi - 110020. INDIA.</p>
                   </div>
                 </div>
               </div>
@@ -856,7 +858,7 @@ function Footer() {
               className="text-white text-[13px]"
               style={{ fontFamily: inter, fontWeight: 400, lineHeight: "19.5px" }}
             >
-              © 2026 Nanda Kailash Infrastructure &amp; Developers. All rights reserved.
+              Â© 2026 Nanda Kailash Infrastructure &amp; Developers. All rights reserved.
             </p>
             <p
               className="text-white text-[13px]"
@@ -871,7 +873,7 @@ function Footer() {
   );
 }
 
-/* ─── App ─── */
+/* â”€â”€â”€ App â”€â”€â”€ */
 export default function SolarWindPage({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: SolarWindPageProps) {
   return (
     <div className="w-full min-h-screen bg-white" data-name="SOLAR WIND">
