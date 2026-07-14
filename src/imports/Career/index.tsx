@@ -2388,10 +2388,9 @@ function Container76() {
   return (
     <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[190px]">
-        <p className="leading-[21px] mb-0">544, DLF Prime Towers,</p>
-        <p className="leading-[21px] mb-0">F-79 &amp; 80, Okhla Industrial</p>
-        <p className="leading-[21px] mb-0">Area Phase - 1,</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[260px]">
+        <p className="leading-[21px] mb-0">544, DLF Prime Towers, F-79 &amp; 80,</p>
+        <p className="leading-[21px] mb-0">Okhla Industrial Area Phase - 1,</p>
         <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>

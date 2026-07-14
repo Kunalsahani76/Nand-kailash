@@ -837,9 +837,8 @@ function Footer() {
                   </svg>
                   <div>
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>ADDRESS</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers,</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>F-79 &amp; 80, Okhla Industrial</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Area Phase - 1,</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers, F-79 &amp; 80,</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Okhla Industrial Area Phase - 1,</p>
                     <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi - 110020. INDIA.</p>
                   </div>
                 </div>

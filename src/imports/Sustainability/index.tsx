@@ -321,7 +321,7 @@ function Container10() {
 
 function Heading2() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Heading 4">
+    <div className="min-h-[80px] relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[16px] relative size-full">
         <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-white w-full">
           <p className="leading-[32px] mb-0">Environmental</p>
@@ -346,7 +346,7 @@ function Container11() {
 
 function Card() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-center pl-[20px] pr-[10px] py-[20px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 1">
+    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-start pb-[20px] pl-[20px] pr-[10px] pt-[24px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 1">
       <Container10 />
       <Heading2 />
       <Container11 />
@@ -378,7 +378,7 @@ function Container12() {
 
 function Heading3() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Heading 4">
+    <div className="min-h-[80px] relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[16px] relative size-full">
         <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-white w-full">
           <p className="leading-[32px] mb-0">Renewable Energy</p>
@@ -405,7 +405,7 @@ function Container13() {
 
 function Card1() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-center pl-[20px] pr-[10px] py-[20px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 2">
+    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-start pb-[20px] pl-[20px] pr-[10px] pt-[24px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 2">
       <Container12 />
       <Heading3 />
       <Container13 />
@@ -437,7 +437,7 @@ function Container14() {
 
 function Heading4() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Heading 4">
+    <div className="min-h-[80px] relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[16px] relative size-full">
         <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-white w-full">
           <p className="leading-[32px]">Workforce Safety</p>
@@ -461,7 +461,7 @@ function Container15() {
 
 function Card2() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-center pl-[20px] pr-[10px] py-[20px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 3">
+    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-start pb-[20px] pl-[20px] pr-[10px] pt-[24px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 3">
       <Container14 />
       <Heading4 />
       <Container15 />
@@ -498,7 +498,7 @@ function Container16() {
 
 function Heading5() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Heading 4">
+    <div className="min-h-[80px] relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[16px] relative size-full">
         <div className="[word-break:break-word] flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-white w-full">
           <p className="leading-[32px]">Workforce Safety</p>
@@ -522,7 +522,7 @@ function Container17() {
 
 function Card3() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-center pl-[20px] pr-[10px] py-[20px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 4">
+    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-start pb-[20px] pl-[20px] pr-[10px] pt-[24px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 4">
       <Container16 />
       <Heading5 />
       <Container17 />
@@ -2395,10 +2395,9 @@ function Container82() {
   return (
     <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[190px]">
-        <p className="leading-[21px] mb-0">544, DLF Prime Towers,</p>
-        <p className="leading-[21px] mb-0">F-79 &amp; 80, Okhla Industrial</p>
-        <p className="leading-[21px] mb-0">Area Phase - 1,</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[260px]">
+        <p className="leading-[21px] mb-0">544, DLF Prime Towers, F-79 &amp; 80,</p>
+        <p className="leading-[21px] mb-0">Okhla Industrial Area Phase - 1,</p>
         <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>

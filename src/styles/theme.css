@@ -189,6 +189,74 @@
     will-change: transform;
   }
 
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > button,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group {
+    position: relative;
+  }
+
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > button::after,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group::after {
+    background: #ffce1b;
+    bottom: 7px;
+    content: "";
+    height: 3px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > button:hover::after,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > button:focus-visible::after,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group:hover::after,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group:focus-within::after {
+    transform: scaleX(1);
+  }
+
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group > div > button {
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group > div > button:hover,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group > div > button:focus-visible {
+    background-color: #ffce1b;
+    border-color: #ffce1b;
+    color: #0b0b0b;
+  }
+
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group > div > button:hover *,
+  [data-name="NAV BAR"] > div[class*="gap-[6px]"] > div.group > div > button:focus-visible * {
+    color: #0b0b0b;
+  }
+
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > a,
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > div.group {
+    position: relative;
+  }
+
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > a::after,
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > div.group::after {
+    background: #ffce1b;
+    bottom: 7px;
+    content: "";
+    height: 3px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > a:hover::after,
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > a:focus-visible::after,
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > div.group:hover::after,
+  [data-name="SOLAR WIND"] nav [class~="lg:flex"] > div.group:focus-within::after {
+    transform: scaleX(1);
+  }
+
   [data-name="Button"],
   [data-name="NAV BAR"] > div:last-child,
   [data-name="SOLAR WIND"] nav button:not([aria-label]),
