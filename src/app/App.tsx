@@ -18,7 +18,9 @@ type Page = "home" | "about" | "landSurveying" | "solarWind" | "buildingConstruc
 export default function App() {
   const [page, setPage] = useState<Page>("home");
   const [scale, setScale] = useState(1);
+  const [pageHeight, setPageHeight] = useState(0);
   const scaleRef = useRef(1);
+  const pageContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -47,6 +49,23 @@ export default function App() {
       window.removeEventListener("resize", updateScale);
     };
   }, []);
+
+  useEffect(() => {
+    const content = pageContentRef.current;
+    if (!content) return;
+
+    const updateHeight = () => {
+      const nextHeight = content.scrollHeight;
+      setPageHeight((currentHeight) =>
+        Math.abs(currentHeight - nextHeight) > 1 ? nextHeight : currentHeight,
+      );
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(content);
+    return () => observer.disconnect();
+  }, [page]);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
@@ -275,10 +294,10 @@ export default function App() {
       />
     );
 
-  const scaledPageStyle: CSSProperties & { zoom: number } = {
+  const scaledPageStyle: CSSProperties = {
     width: `${DESIGN_WIDTH}px`,
     transformOrigin: "top left",
-    zoom: scale,
+    transform: `scale(${scale})`,
   };
 
   if (page === "solarWind" && scale < 1024 / DESIGN_WIDTH) {
@@ -305,7 +324,16 @@ export default function App() {
         position: "relative",
       }}
     >
-      <div style={scaledPageStyle}>{renderedPage}</div>
+      <div
+        style={{
+          height: pageHeight ? `${Math.ceil(pageHeight * scale)}px` : undefined,
+          overflow: "hidden",
+        }}
+      >
+        <div ref={pageContentRef} style={scaledPageStyle}>
+          {renderedPage}
+        </div>
+      </div>
     </div>
   );
 }
