@@ -1648,7 +1648,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

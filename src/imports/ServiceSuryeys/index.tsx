@@ -40,7 +40,7 @@ type ServiceDropdownItem = {
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Solar & Wind", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -467,8 +467,8 @@ function Container22() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-[493px]" data-name="Container">
       <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#4b5563] text-[18px] w-full">
-        <p className="leading-[32px] mb-0">We provide high-accuracy land surveying solutions that</p>
-        <p className="leading-[32px] mb-0">form the bedrock of successful infrastructure projects.</p>
+        <p className="leading-[32px] mb-0">We provide high-accuracy land surveying solutions</p>
+        <p className="leading-[32px] mb-0">that form the bedrock of successful infrastructure projects.</p>
         <p className="leading-[32px] mb-0">Our team combines decades of field expertise with</p>
         <p className="leading-[32px]">state-of-the-art geospatial technology.</p>
       </div>
@@ -2742,7 +2742,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

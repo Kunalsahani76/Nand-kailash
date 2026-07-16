@@ -30,7 +30,7 @@ type ServiceDropdownItem = {
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Solar & Wind", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -66,7 +66,7 @@ function Frame19() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full">
       <Margin />
-      <p className="[word-break:break-word] capitalize font-['Sora:ExtraBold',sans-serif] font-extrabold leading-[1.1] relative shrink-0 text-[64px] text-white tracking-[-1.28px] w-[743px]">buid indiaâ€™s future with us</p>
+      <p className="[word-break:break-word] capitalize font-['Sora:ExtraBold',sans-serif] font-extrabold leading-[1.1] relative shrink-0 text-[64px] text-white tracking-[-1.28px] w-[743px]">Build India&apos;s Future With Us</p>
     </div>
   );
 }
@@ -535,7 +535,7 @@ function Container19() {
 
 function Card3() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-center pl-[20px] pr-[10px] py-[20px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 4">
+    <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[322px] items-start justify-start pb-[20px] pl-[20px] pr-[10px] pt-[52px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[308px]" data-name="Card 4">
       <Container17 />
       <Heading5 />
       <Container19 />
@@ -2452,7 +2452,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );

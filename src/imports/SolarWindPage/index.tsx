@@ -28,7 +28,7 @@ type SolarWindPageProps = {
 
 const serviceDropdownItems = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Solar & Wind", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -835,11 +835,11 @@ function Footer() {
                     <path d={svgPaths.p1f466f80} stroke="#355D9B" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                     <path d={svgPaths.p17781bc0} stroke="#355D9B" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <div>
+                  <div className="w-[260px] shrink-0">
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>ADDRESS</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers, F-79 &amp; 80,</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Okhla Industrial Area Phase - 1,</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi - 110020. INDIA.</p>
+                    <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers, F-79 &amp; 80,</p>
+                    <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Okhla Industrial Area Phase - 1,</p>
+                    <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi - 110020. INDIA.</p>
                   </div>
                 </div>
               </div>
@@ -857,7 +857,7 @@ function Footer() {
               className="text-white text-[13px]"
               style={{ fontFamily: inter, fontWeight: 400, lineHeight: "19.5px" }}
             >
-              Â© 2026 Nanda Kailash Infrastructure &amp; Developers. All rights reserved.
+              © 2026 Nanda Kailash Infrastructure &amp; Developers. All rights reserved.
             </p>
             <p
               className="text-white text-[13px]"

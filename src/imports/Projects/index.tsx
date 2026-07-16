@@ -33,7 +33,7 @@ type ServiceDropdownItem = {
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar Wind", onClick: "solarWind" },
+  { label: "Solar & Wind", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -1212,7 +1212,7 @@ function Frame16() {
 
 function Container50() {
   return (
-    <div className="h-[62px] relative shrink-0 w-[224px]" data-name="Container">
+    <div className="h-[62px] relative shrink-0 w-full" data-name="Container">
       <Frame16 />
     </div>
   );
@@ -1220,8 +1220,8 @@ function Container50() {
 
 function Paragraph() {
   return (
-    <div className="flex-[1_0_0] min-h-px relative w-[224px]" data-name="Paragraph">
-      <p className="[word-break:break-word] absolute capitalize font-['Inter:Regular',sans-serif] font-normal leading-[32px] left-0 not-italic text-[18px] text-black top-[-0.5px] w-[314px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
+    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Paragraph">
+      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[23px] left-0 not-italic text-[16px] text-black top-[-0.5px] w-[223px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
     </div>
   );
 }
@@ -1271,7 +1271,7 @@ function Icon4() {
 
 function Container51() {
   return (
-    <div className="content-stretch flex gap-[12px] h-[36px] items-start relative shrink-0" data-name="Container">
+    <div className="content-stretch flex gap-[12px] h-[36px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="bg-[rgba(0,0,0,0.26)] relative rounded-[8px] shrink-0 size-[36px]" data-name="Link">
         <div aria-hidden className="absolute border border-[rgba(0,0,0,0.3)] border-solid inset-0 pointer-events-none rounded-[8px]" />
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[10px] py-px relative size-full">
@@ -1311,7 +1311,7 @@ function Container51() {
 function Frame17() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="content-stretch flex flex-col gap-[12px] h-full items-start relative shrink-0">
+      <div className="content-stretch flex flex-col gap-[12px] h-full items-start relative shrink-0 w-[203px]">
         <Container50 />
         <Paragraph />
         <Container51 />
@@ -1758,7 +1758,7 @@ function Paragraph1() {
   return (
     <div className="h-[19.5px] relative shrink-0 w-[434.531px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`Â© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-0 not-italic text-[13px] text-white top-0 whitespace-nowrap">{`© 2026 Nanda Kailash Infrastructure & Developers. All rights reserved.`}</p>
       </div>
     </div>
   );
