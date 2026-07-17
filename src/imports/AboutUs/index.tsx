@@ -21,7 +21,7 @@ import imgSolarProjectsCarousel from "@/images/Solar Projects.jpg";
 import imgIndustrialInfrastructureCarousel from "@/images/Industrial Infrastructure.jpg";
 import imgCommercialBuildingsCarousel from "@/images/Commercial Buildings.jpg";
 import imgRoadsHighwaysCarousel from "@/images/Roads & Highways.jpg";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 
 type AboutUsProps = {
   onNavigateHome?: () => void;
@@ -1670,8 +1670,8 @@ function Frame48() {
 
 function Frame12() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2274,8 +2274,8 @@ function Footer() {
 
 function Frame14() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }

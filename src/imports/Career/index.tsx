@@ -7,7 +7,7 @@ import imgIndustrial from "./7809d6f2c362c2d135a7e4bb5b6c33cac756f266.png";
 import imgFrame399 from "./c17a25d181ef222dabc25907a0e86b70a3683bca.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 
 type CareerProps = {
   onNavigateAbout?: () => void;
@@ -1898,8 +1898,8 @@ function Frame34() {
 
 function Frame12() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2502,8 +2502,8 @@ function Footer() {
 
 function Frame14() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import imgAp1WrLuQraxDnOo1D3FeVDo76Ojmz0Y1WbiyqbYHd73Tk6WsW0M24Nosq6U2N45K2Xd6Ii
 import imgAp1WrLtTRnMEeBbTlDkHpMloG1EvIM6YeVGdfCEWMc0YKwYfi0MoE81Q85P8TPHc8I5Mfc9Gku3ThBuPh3KDvkqikQwbtIa1U6DLF0DCvIgmjLt2S2Tss5Pci2TQ6Bps6Y1G1YexKbjZ3PEXeGoaPGpiJycLbFllBjv5ZfDnlpJ45J1TepYQoSyo19RWbO7Vw0EiCkPdOyNp8Qi66EoSaenhl7NccDwM90TJkcLa0TpAl5Zmq6RAaOxRoP from "./adac8555dc9d9a3626b5a1a0cabe318b2e821d3d.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 
 type ElectricWorkProps = {
   onNavigateAbout?: () => void;
@@ -1579,8 +1579,8 @@ function SectionFinalCta() {
 
 function Frame8() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2183,8 +2183,8 @@ function Footer() {
 
 function Frame10() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }

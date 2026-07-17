@@ -10,7 +10,7 @@ import imgAaiDgpsSiteSurvey6 from "./6cd3ea2ad01bfb257bbdc755cb1e0b45bebd24d2.pn
 import imgAaiDgpsSiteSurvey7 from "./f9e8beff5d306bcd72e2d4302780f3d5e4c20259.png";
 import imgAaiDgpsSiteSurvey8 from "./c6ff6dbaf5926741f658cbab6ebb0b492bf07556.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 
 type ProjectsProps = {
   onNavigateAbout?: () => void;
@@ -1204,8 +1204,8 @@ function SectionFinalCta() {
 
 function Frame16() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -1808,8 +1808,8 @@ function Footer() {
 
 function Frame18() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }

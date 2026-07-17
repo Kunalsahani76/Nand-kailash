@@ -5,7 +5,7 @@ import imgAbout from "@/imports/SoloarWind/3d34e7fd5b4bc7ce76b764d4b677991c3aeee
 import imgProcessBg from "@/imports/SoloarWind/f5c723ac516ab16778bbc4a1a837f54ecbb670af.png";
 import imgFooterBg from "@/imports/SoloarWind/ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgLogo from "@/imports/SoloarWind/c20da46eb86065efabefe8dda3d480f08dfffacc.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 import { Menu, X } from "lucide-react";
 
 const sora = "'Sora', sans-serif";
@@ -691,8 +691,8 @@ function Footer() {
           <div className="flex items-center justify-between">
             {/* Column 1: Logo + About */}
             <div className="flex h-[273px] w-[314px] flex-col gap-[12px]">
-              <div className="relative h-[49px] w-[73px]">
-                <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="relative h-[49px] w-[79px]">
+                <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-contain" />
               </div>
               <p
                 className="text-black text-[16px] leading-[23px] w-[223px]"

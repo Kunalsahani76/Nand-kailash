@@ -7,7 +7,7 @@ import imgEngineersDiscussing from "./ff041ac6d7a08a22a823be0e33764add09c49950.p
 import imgEngineersDiscussing1 from "./d94f3696a5d9902d62769b8b262d860ebac8957b.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 
 type SustainabilityProps = {
   onNavigateAbout?: () => void;
@@ -1905,8 +1905,8 @@ function SectionMetricsCommitment() {
 
 function Frame13() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -2509,8 +2509,8 @@ function Footer() {
 
 function Frame15() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }

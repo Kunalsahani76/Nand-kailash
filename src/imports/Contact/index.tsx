@@ -3,7 +3,7 @@ import imgFrame261 from "./9581c1df52e5cbcdc283bbd4f517a12ffaf69d49.png";
 import imgAb6AXuDcKAzknQAlWPfReUSvHfmbl4TfTsTolkWmPwXQdxe6MxlKjfHh0Dc7L436UksuepyVux5DIrHmhwxbaZDsptK3FyMjv2CsXt46SLhlzOnFjWlJ8C9IvyOl9Qvy3458T8ZroKkce0BbvSf8QYlAex0RkeqRrfV5G44YU8GaNnvIXxHtiznDpQ2Iq8Z3VJhPcrfcVmtJhov5URucoUj7Yh3WPvzG15WIxUi7N3Qq5ElTlghOK2T2Vf0Mf0UJpBxKcNxdWyQsuv from "./3894bde64a9ece66b50901f566ae343facb35d4e.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
-import websiteIcon from "@/images/website icon.png";
+import websiteIcon from "@/images/Nanda logo.jpg";
 import { useState, type FormEvent } from "react";
 
 type ContactProps = {
@@ -1079,8 +1079,8 @@ function Frame19() {
 
 function Frame8() {
   return (
-    <div className="absolute h-[49px] left-0 top-px w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="absolute h-[49px] left-0 top-px w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
@@ -1683,8 +1683,8 @@ function Footer() {
 
 function Frame10() {
   return (
-    <div className="h-[49px] relative shrink-0 w-[73px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={websiteIcon} />
+    <div className="h-[49px] relative shrink-0 w-[79px]">
+      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={websiteIcon} />
     </div>
   );
 }
