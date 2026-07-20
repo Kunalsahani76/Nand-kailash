@@ -82,6 +82,37 @@ export default function App() {
   }, [page]);
 
   useEffect(() => {
+    const closeAllServiceDropdowns = () => {
+      document.querySelectorAll<HTMLElement>("[data-services-dropdown]").forEach((dropdown) => {
+        dropdown.dataset.open = "false";
+      });
+    };
+
+    const handleDocumentClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const trigger = target.closest<HTMLElement>("[data-services-dropdown-trigger]");
+      if (trigger) {
+        const dropdown = trigger.closest<HTMLElement>("[data-services-dropdown]");
+        if (!dropdown) return;
+
+        const willOpen = dropdown.dataset.open !== "true";
+        closeAllServiceDropdowns();
+        dropdown.dataset.open = String(willOpen);
+        return;
+      }
+
+      if (!target.closest("[data-services-dropdown]")) {
+        closeAllServiceDropdowns();
+      }
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+    return () => document.removeEventListener("click", handleDocumentClick);
+  }, []);
+
+  useEffect(() => {
     const timeout = window.setTimeout(() => {
       document.querySelectorAll(".image-card-hover").forEach((element) => {
         element.classList.remove("image-card-hover");

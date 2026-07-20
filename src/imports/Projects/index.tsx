@@ -1853,10 +1853,10 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
         <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">About Us</p>
         <Frame1 />
       </button>
-      <div className="content-stretch flex flex-col group items-start justify-center p-[10px] relative shrink-0">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">Services</p>
+      <div className="content-stretch flex flex-col group items-start justify-center p-[10px] relative shrink-0" data-services-dropdown>
+        <p className="[word-break:break-word] cursor-pointer font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap" data-services-dropdown-trigger>Services</p>
         <Frame2 />
-        <div className="absolute hidden group-hover:flex group-focus-within:flex flex-col left-1/2 top-[51px] -translate-x-1/2 w-[270px] z-[60]">
+        <div className="absolute hidden group-data-[open=true]:flex flex-col left-1/2 top-[51px] -translate-x-1/2 w-[270px] z-[60]">
           {serviceDropdownItems.map((item) => (
             <button
               className="bg-white border border-[#404040] content-stretch cursor-pointer flex items-center justify-start h-[35px] px-[12px] text-left w-full"

@@ -89,16 +89,17 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
               {link.label}
             </a>
           ))}
-          <div className="group relative">
+          <div className="group relative" data-services-dropdown>
             <a
               className="block px-[10px] py-[10px] text-[16px] text-[#404040] whitespace-nowrap"
+              data-services-dropdown-trigger
               href="#"
               onClick={(event) => event.preventDefault()}
               style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}
             >
               Services
             </a>
-            <div className="absolute hidden group-hover:flex group-focus-within:flex flex-col left-1/2 top-[41px] -translate-x-1/2 w-[270px] z-[60]">
+            <div className="absolute hidden group-data-[open=true]:flex flex-col left-1/2 top-[41px] -translate-x-1/2 w-[270px] z-[60]">
               {serviceDropdownItems.map((item) => (
                 <button
                   className="bg-white border border-[#404040] cursor-pointer flex h-[35px] items-center justify-start px-[12px] text-left w-full"
