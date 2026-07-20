@@ -1,5 +1,5 @@
 ﻿import svgPaths from "./svg-nz38dqz0ox";
-import imgFrame261 from "./388c6f432c37c031c6a38839fbfe789fed323b48.png";
+import imgFrame261 from "@/images/Sustainabaility hero.png";
 import imgSolarPanels from "./6e982c82e60f030c8aa8b29658a895ed4a97fa2a.png";
 import imgWindTurbines from "./2cef9f2e757c5832482b001ff79d13c2572e84d9.png";
 import imgEngineer from "./a6cb73497fac32cb3b115f9d7c69251734940ee7.png";
