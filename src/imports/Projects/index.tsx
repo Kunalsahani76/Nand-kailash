@@ -1131,7 +1131,7 @@ function CardsGrid() {
 
 function PortfolioSection() {
   return (
-    <div className="h-[1798px] max-w-[1280px] relative shrink-0 w-full" data-name="Portfolio Section">
+    <div className="h-[1798px] max-w-[1280px] relative shrink-0 w-full" data-name="Portfolio Section" id="completed-projects">
       <div className="flex flex-col items-center justify-center max-w-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[48px] items-center justify-center max-w-[inherit] px-[48px] py-[80px] relative size-full">
           <Container19 />

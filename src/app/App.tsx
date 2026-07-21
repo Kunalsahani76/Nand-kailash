@@ -19,6 +19,7 @@ export default function App() {
   const [page, setPage] = useState<Page>("home");
   const [scale, setScale] = useState(1);
   const [pageHeight, setPageHeight] = useState(0);
+  const [scrollToCompletedProjects, setScrollToCompletedProjects] = useState(false);
   const scaleRef = useRef(1);
   const pageContentRef = useRef<HTMLDivElement>(null);
 
@@ -170,6 +171,30 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  const navigateToCompletedProjects = useCallback(() => {
+    setScrollToCompletedProjects(true);
+    setPage("projects");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  useEffect(() => {
+    if (page !== "projects" || !scrollToCompletedProjects) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const section = document.getElementById("completed-projects");
+      if (section) {
+        window.scrollTo({
+          top: window.scrollY + section.getBoundingClientRect().top - 80,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+      setScrollToCompletedProjects(false);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [page, scrollToCompletedProjects]);
+
   const renderedPage =
     page === "about" ? (
       <AboutUs
@@ -319,6 +344,7 @@ export default function App() {
         onNavigateElectricWork={() => navigateTo("electricWork")}
         onNavigateBuildingManagement={() => navigateTo("buildingManagement")}
         onNavigateProjects={() => navigateTo("projects")}
+        onNavigateProjectsSection={navigateToCompletedProjects}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
         onNavigateContact={() => navigateTo("contact")}
@@ -327,8 +353,10 @@ export default function App() {
 
   const scaledPageStyle: CSSProperties = {
     width: `${DESIGN_WIDTH}px`,
-    transformOrigin: "top left",
-    transform: `scale(${scale})`,
+    // `transform` creates a containing block, which makes fixed navbars scroll
+    // away with their page. Zoom preserves the existing visual scaling without
+    // changing the navbar's viewport-fixed positioning.
+    zoom: scale,
   };
 
   if (page === "solarWind" && scale < 1024 / DESIGN_WIDTH) {

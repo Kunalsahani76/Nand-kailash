@@ -29,6 +29,7 @@ type HomeProps = {
   onNavigateElectricWork?: () => void;
   onNavigateBuildingManagement?: () => void;
   onNavigateProjects?: () => void;
+  onNavigateProjectsSection?: () => void;
   onNavigateSustainability?: () => void;
   onNavigateCareers?: () => void;
   onNavigateContact?: () => void;
@@ -39,6 +40,15 @@ type ServiceDropdownItem = {
   onClick?: "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
 };
 
+type CoreServiceDestination = "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
+
+type CoreService = {
+  title: string;
+  description: string;
+  image: string;
+  destination?: CoreServiceDestination;
+};
+
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
   { label: "Solar & Wind", onClick: "solarWind" },
@@ -47,7 +57,7 @@ const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Building Management", onClick: "buildingManagement" },
 ];
 
-const coreServices = [
+const coreServices: CoreService[] = [
   {
     title: "Infrastructure Development",
     description: "Roads, highways, industrial projects, and public infrastructure built to last generations.",
@@ -57,26 +67,31 @@ const coreServices = [
     title: "Building Construction",
     description: "Commercial and residential construction solutions with precision engineering and quality assurance.",
     image: imgFrame137,
+    destination: "buildingConstruction",
   },
   {
     title: "Solar Infrastructure",
     description: "Renewable energy and solar infrastructure development for a sustainable tomorrow.",
     image: imgFrame138,
+    destination: "solarWind",
   },
   {
     title: "Land Surveying",
     description: "Accurate surveying and planning solutions using advanced technology and expertise.",
     image: imgFrame139,
+    destination: "landSurveying",
   },
   {
     title: "Electrical Infrastructure",
     description: "Industrial and commercial electrical systems designed for safety and efficiency.",
     image: imgFrame140,
+    destination: "electricWork",
   },
   {
     title: "Maintenance Services",
     description: "Long-term maintenance and support services to protect your infrastructure investment.",
     image: imgFrame141,
+    destination: "buildingManagement",
   },
 ];
 
@@ -159,10 +174,10 @@ function Icon1() {
   );
 }
 
-function Frame72() {
+function Frame72({ onNavigateProjectsSection }: Pick<HomeProps, "onNavigateProjectsSection">) {
   return (
     <div className="content-stretch flex gap-[25px] items-center relative shrink-0">
-      <div className="bg-[#355d9b] content-stretch flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0 w-[208px]" data-name="Button">
+      <div className="bg-[#355d9b] content-stretch cursor-pointer flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0 w-[208px]" data-name="Button" onClick={onNavigateProjectsSection} role="button" tabIndex={0}>
         <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] min-w-px not-italic relative text-[15px] text-center text-white">{`Explore Projects `}</p>
         <Icon1 />
       </div>
@@ -174,11 +189,11 @@ function Frame72() {
   );
 }
 
-function Frame75() {
+function Frame75({ onNavigateProjectsSection }: Pick<HomeProps, "onNavigateProjectsSection">) {
   return (
     <div className="content-stretch flex flex-col gap-[18px] items-start relative shrink-0">
       <Frame74 />
-      <Frame72 />
+      <Frame72 onNavigateProjectsSection={onNavigateProjectsSection} />
     </div>
   );
 }
@@ -251,16 +266,16 @@ function Frame77() {
   );
 }
 
-function Frame76() {
+function Frame76({ onNavigateProjectsSection }: Pick<HomeProps, "onNavigateProjectsSection">) {
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[38px] items-start left-[40px] top-1/2">
-      <Frame75 />
+      <Frame75 onNavigateProjectsSection={onNavigateProjectsSection} />
       <Frame77 />
     </div>
   );
 }
 
-function Frame39() {
+function Frame39({ onNavigateProjectsSection }: Pick<HomeProps, "onNavigateProjectsSection">) {
   return (
     <div className="h-[750px] overflow-clip relative shrink-0 w-[1440px]">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -268,7 +283,7 @@ function Frame39() {
         <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(-89.741deg, rgba(255, 255, 255, 0) 45.706%, rgba(0, 0, 0, 0.7) 99.892%)" }} />
       </div>
       <Icon />
-      <Frame76 />
+      <Frame76 onNavigateProjectsSection={onNavigateProjectsSection} />
     </div>
   );
 }
@@ -396,9 +411,14 @@ function Container1() {
   );
 }
 
-function CoreServiceCard({ title, description, image }: (typeof coreServices)[number]) {
+function CoreServiceCard({ title, description, image, onClick }: CoreService & { onClick?: () => void }) {
   return (
-    <div className="group h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[437px]">
+    <div className={`group h-[318px] overflow-clip relative rounded-[12px] shrink-0 w-[437px]${onClick ? " cursor-pointer" : ""}`} onClick={onClick} onKeyDown={onClick ? (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        onClick();
+      }
+    } : undefined} role={onClick ? "button" : undefined} tabIndex={onClick ? 0 : undefined}>
       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[12px]">
         <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full transition-transform duration-500 ease-out group-hover:scale-[1.04]" src={image} />
         <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0.08)] inset-0 rounded-[12px] to-[rgba(0,0,0,0.75)] transition-opacity duration-500 ease-out group-hover:opacity-0" />
@@ -414,21 +434,29 @@ function CoreServiceCard({ title, description, image }: (typeof coreServices)[nu
   );
 }
 
-function Frame40() {
+function Frame40({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
+  const serviceNavigation: Record<CoreServiceDestination, (() => void) | undefined> = {
+    landSurveying: onNavigateLandSurveying,
+    solarWind: onNavigateSolarWind,
+    buildingConstruction: onNavigateBuildingConstruction,
+    electricWork: onNavigateElectricWork,
+    buildingManagement: onNavigateBuildingManagement,
+  };
+
   return (
     <div className="gap-x-[31px] gap-y-[31px] grid grid-cols-[repeat(3,fit-content(100%))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
       {coreServices.map((service) => (
-        <CoreServiceCard key={service.title} {...service} />
+        <CoreServiceCard key={service.title} {...service} onClick={service.destination ? serviceNavigation[service.destination] : undefined} />
       ))}
     </div>
   );
 }
 
-function Frame41() {
+function Frame41({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
   return (
     <div className="content-stretch flex flex-col gap-[55px] items-center py-[50px] relative shrink-0 w-[1372.72px]">
       <Container1 />
-      <Frame40 />
+      <Frame40 onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
     </div>
   );
 }
@@ -1921,12 +1949,12 @@ function Frame9({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind,
   );
 }
 
-export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
+export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateProjectsSection, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative size-full" data-name="HOME">
-      <Frame39 />
+      <Frame39 onNavigateProjectsSection={onNavigateProjectsSection} />
       <Frame80 />
-      <Frame41 />
+      <Frame41 onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
       <Frame43 />
       <Frame34 />
       <Frame35 />
