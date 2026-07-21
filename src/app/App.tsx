@@ -20,6 +20,8 @@ export default function App() {
   const [scale, setScale] = useState(1);
   const [pageHeight, setPageHeight] = useState(0);
   const [scrollToCompletedProjects, setScrollToCompletedProjects] = useState(false);
+  const [scrollToServices, setScrollToServices] = useState(false);
+  const [scrollToInquiryForm, setScrollToInquiryForm] = useState(false);
   const scaleRef = useRef(1);
   const pageContentRef = useRef<HTMLDivElement>(null);
 
@@ -177,6 +179,18 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  const navigateToServices = useCallback(() => {
+    setScrollToServices(true);
+    setPage("home");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  const navigateToInquiryForm = useCallback(() => {
+    setScrollToInquiryForm(true);
+    setPage("contact");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   useEffect(() => {
     if (page !== "projects" || !scrollToCompletedProjects) return;
 
@@ -195,6 +209,104 @@ export default function App() {
     return () => window.cancelAnimationFrame(frame);
   }, [page, scrollToCompletedProjects]);
 
+  useEffect(() => {
+    if (page !== "home" || !scrollToServices) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const section = document.getElementById("services");
+      if (section) {
+        window.scrollTo({
+          top: window.scrollY + section.getBoundingClientRect().top - 80,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+      setScrollToServices(false);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [page, scrollToServices]);
+
+  useEffect(() => {
+    if (page !== "contact" || !scrollToInquiryForm) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const form = document.getElementById("inquiry-form");
+      if (form) {
+        window.scrollTo({
+          top: window.scrollY + form.getBoundingClientRect().top - 80,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+      setScrollToInquiryForm(false);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [page, scrollToInquiryForm]);
+
+  useEffect(() => {
+    const contactCtaLabels = new Set(["Contact Us", "Contact Us Today", "Contact Our Team", "Consult Our Engineers"]);
+
+    document.querySelectorAll<HTMLElement>('[data-name="Button"], a, button').forEach((item) => {
+      if (contactCtaLabels.has(item.textContent?.trim() ?? "")) {
+        item.style.cursor = "pointer";
+      }
+    });
+
+    const handleContactCtaClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const label = target.closest<HTMLElement>('[data-name="Button"], a, button')?.textContent?.trim();
+      if (!label || !contactCtaLabels.has(label)) return;
+
+      event.preventDefault();
+      navigateToInquiryForm();
+    };
+
+    document.addEventListener("click", handleContactCtaClick);
+    return () => document.removeEventListener("click", handleContactCtaClick);
+  }, [navigateToInquiryForm, page]);
+
+  useEffect(() => {
+    const footerDestinations: Record<string, () => void> = {
+      Home: () => navigateTo("home"),
+      "About Us": () => navigateTo("about"),
+      Services: navigateToServices,
+      Projects: () => navigateTo("projects"),
+      Careers: () => navigateTo("career"),
+      Contact: () => navigateTo("contact"),
+      "Infrastructure Development": navigateToServices,
+      "Building Construction": () => navigateTo("buildingConstruction"),
+      "Solar Projects": () => navigateTo("solarWind"),
+      "Land Surveying": () => navigateTo("landSurveying"),
+      "Electrical Infrastructure": () => navigateTo("electricWork"),
+      "Maintenance Services": () => navigateTo("buildingManagement"),
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-name="Footer"] p').forEach((item) => {
+      if (footerDestinations[item.textContent?.trim() ?? ""]) {
+        item.style.cursor = "pointer";
+      }
+    });
+
+    const handleFooterClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element) || !target.closest('[data-name="Footer"]')) return;
+
+      const label = target.closest("p, a")?.textContent?.trim();
+      const destination = label ? footerDestinations[label] : undefined;
+      if (destination) {
+        event.preventDefault();
+        destination();
+      }
+    };
+
+    document.addEventListener("click", handleFooterClick);
+    return () => document.removeEventListener("click", handleFooterClick);
+  }, [navigateTo, navigateToServices, page]);
+
   const renderedPage =
     page === "about" ? (
       <AboutUs
@@ -207,7 +319,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "landSurveying" ? (
       <ServiceSuryeys
@@ -221,7 +333,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "solarWind" ? (
       <SolarWindPage
@@ -235,7 +347,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "buildingConstruction" ? (
       <BuildingConstruction
@@ -249,7 +361,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "electricWork" ? (
       <ElectricWork
@@ -263,7 +375,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "buildingManagement" ? (
       <BuldingManagment
@@ -277,7 +389,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "projects" ? (
       <Projects
@@ -291,7 +403,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "sustainability" ? (
       <Sustainability
@@ -305,7 +417,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "career" ? (
       <Career
@@ -319,7 +431,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : page === "contact" ? (
       <Contact
@@ -333,7 +445,7 @@ export default function App() {
         onNavigateProjects={() => navigateTo("projects")}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     ) : (
       <Home
@@ -347,7 +459,7 @@ export default function App() {
         onNavigateProjectsSection={navigateToCompletedProjects}
         onNavigateSustainability={() => navigateTo("sustainability")}
         onNavigateCareers={() => navigateTo("career")}
-        onNavigateContact={() => navigateTo("contact")}
+        onNavigateContact={navigateToInquiryForm}
       />
     );
 

@@ -28,7 +28,7 @@ type SolarWindPageProps = {
 
 const serviceDropdownItems = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar & Wind", onClick: "solarWind" },
+  { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },

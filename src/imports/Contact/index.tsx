@@ -27,7 +27,7 @@ type ServiceDropdownItem = {
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar & Wind", onClick: "solarWind" },
+  { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -598,7 +598,7 @@ function Form() {
 
 function Frame21() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-[666.67px]">
+    <div className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-[666.67px]" id="inquiry-form">
       <Container7 />
       <Form />
     </div>

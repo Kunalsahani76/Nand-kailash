@@ -20,6 +20,7 @@ import imgFrame10 from "./0d7706bc5c91588b0a2de9e7d76c240dda34809e.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
 import websiteIcon from "@/images/Nanda logo.jpg";
+import { useEffect, useState } from "react";
 
 type HomeProps = {
   onNavigateAbout?: () => void;
@@ -51,7 +52,7 @@ type CoreService = {
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
   { label: "Land Surveying", onClick: "landSurveying" },
-  { label: "Solar & Wind", onClick: "solarWind" },
+  { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
   { label: "Electric Related Work", onClick: "electricWork" },
   { label: "Building Management", onClick: "buildingManagement" },
@@ -94,6 +95,32 @@ const coreServices: CoreService[] = [
     destination: "buildingManagement",
   },
 ];
+
+function AnimatedStat({ target, suffix }: { target: number; suffix: string }) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const duration = 1500;
+    let animationFrame = 0;
+    let startTime: number | undefined;
+
+    const updateValue = (currentTime: number) => {
+      if (startTime === undefined) startTime = currentTime;
+
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      setValue(Math.floor(progress * target));
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(updateValue);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(updateValue);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [target]);
+
+  return <>{value}{suffix}</>;
+}
 
 function Icon() {
   return <div className="absolute left-[534px] size-[32px] top-[702px]" data-name="Icon" />;
@@ -454,7 +481,7 @@ function Frame40({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuild
 
 function Frame41({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
   return (
-    <div className="content-stretch flex flex-col gap-[55px] items-center py-[50px] relative shrink-0 w-[1372.72px]">
+    <div className="content-stretch flex flex-col gap-[55px] items-center py-[50px] relative shrink-0 w-[1372.72px]" id="services">
       <Container1 />
       <Frame40 onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
     </div>
@@ -1057,14 +1084,14 @@ function Frame69() {
   );
 }
 
-function Frame65() {
+function Frame65({ onNavigateContact }: Pick<HomeProps, "onNavigateContact">) {
   return (
     <div className="content-stretch flex flex-col gap-[38px] items-center justify-center py-[60px] relative shrink-0 w-full" style={{ backgroundImage: "linear-gradient(101.111deg, rgb(33, 33, 33) 65.567%, rgb(135, 135, 135) 123.03%)" }}>
       <Frame66 />
       <Frame69 />
-      <div className="bg-[#355d9b] content-stretch flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0" data-name="Button">
+      <button className="bg-[#355d9b] border-0 content-stretch cursor-pointer flex gap-[8px] items-center justify-center px-[32px] py-[15px] relative rounded-[4px] shrink-0" data-name="Button" onClick={onNavigateContact} type="button">
         <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22.5px] not-italic relative shrink-0 text-[18px] text-center text-white whitespace-nowrap">Contact Us Today</p>
-      </div>
+      </button>
     </div>
   );
 }
@@ -1740,7 +1767,7 @@ function Container23() {
 function Frame20() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[165px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">50+</p>
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap"><AnimatedStat suffix="+" target={50} /></p>
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Projects Delivered</p>
     </div>
   );
@@ -1787,7 +1814,7 @@ function Container24() {
 function Frame23() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[165px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">10+</p>
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap"><AnimatedStat suffix="+" target={10} /></p>
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Cities Reached</p>
     </div>
   );
@@ -1820,7 +1847,7 @@ function Icon19() {
 function Frame25() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 w-[190px]">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap">100+</p>
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black whitespace-nowrap"><AnimatedStat suffix="+" target={100} /></p>
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px] whitespace-nowrap">Skilled Workforce</p>
     </div>
   );
@@ -1851,7 +1878,7 @@ function Icon20() {
 function Frame31() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start not-italic relative shrink-0 whitespace-nowrap">
-      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black">100%</p>
+      <p className="font-['Poppins:ExtraBold',sans-serif] leading-[52px] relative shrink-0 text-[44px] text-black"><AnimatedStat suffix="%" target={100} /></p>
       <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] relative shrink-0 text-[#2f2f2f] text-[18px]">Sustainability Focus</p>
     </div>
   );
@@ -1958,7 +1985,7 @@ export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavig
       <Frame43 />
       <Frame34 />
       <Frame35 />
-      <Frame65 />
+      <Frame65 onNavigateContact={onNavigateContact} />
       <div className="h-[486px] relative rounded-[6px] shrink-0 w-[1440px]" data-name="FOOTER">
         <div className="overflow-clip relative rounded-[inherit] size-full">
           <Footer />
