@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 
 type HomeProps = {
   onNavigateAbout?: () => void;
+  onNavigateInfrastructureDevelopment?: () => void;
   onNavigateLandSurveying?: () => void;
   onNavigateSolarWind?: () => void;
   onNavigateBuildingConstruction?: () => void;
@@ -38,10 +39,10 @@ type HomeProps = {
 
 type ServiceDropdownItem = {
   label: string;
-  onClick?: "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
+  onClick?: "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
 };
 
-type CoreServiceDestination = "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
+type CoreServiceDestination = "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement";
 
 type CoreService = {
   title: string;
@@ -51,6 +52,7 @@ type CoreService = {
 };
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
+  { label: "Infrastructure Development", onClick: "infrastructureDevelopment" },
   { label: "Land Surveying", onClick: "landSurveying" },
   { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
@@ -63,6 +65,7 @@ const coreServices: CoreService[] = [
     title: "Infrastructure Development",
     description: "Roads, highways, industrial projects, and public infrastructure built to last generations.",
     image: imgFrame136,
+    destination: "infrastructureDevelopment",
   },
   {
     title: "Building Construction",
@@ -461,8 +464,9 @@ function CoreServiceCard({ title, description, image, onClick }: CoreService & {
   );
 }
 
-function Frame40({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
+function Frame40({ onNavigateInfrastructureDevelopment, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateInfrastructureDevelopment" | "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
   const serviceNavigation: Record<CoreServiceDestination, (() => void) | undefined> = {
+    infrastructureDevelopment: onNavigateInfrastructureDevelopment,
     landSurveying: onNavigateLandSurveying,
     solarWind: onNavigateSolarWind,
     buildingConstruction: onNavigateBuildingConstruction,
@@ -479,11 +483,11 @@ function Frame40({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuild
   );
 }
 
-function Frame41({ onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
+function Frame41({ onNavigateInfrastructureDevelopment, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement }: Pick<HomeProps, "onNavigateInfrastructureDevelopment" | "onNavigateLandSurveying" | "onNavigateSolarWind" | "onNavigateBuildingConstruction" | "onNavigateElectricWork" | "onNavigateBuildingManagement">) {
   return (
     <div className="content-stretch flex flex-col gap-[55px] items-center py-[50px] relative shrink-0 w-[1372.72px]" id="services">
       <Container1 />
-      <Frame40 onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
+      <Frame40 onNavigateInfrastructureDevelopment={onNavigateInfrastructureDevelopment} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
     </div>
   );
 }
@@ -1929,7 +1933,7 @@ function Frame11() {
   return <div className="bg-[#404040] h-[3px] relative shrink-0 w-0" />;
 }
 
-function Frame9({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
+function Frame9({ onNavigateAbout, onNavigateInfrastructureDevelopment, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
   return (
     <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
       <div className="content-stretch flex flex-col items-start justify-center p-[10px] relative shrink-0">
@@ -1948,7 +1952,7 @@ function Frame9({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind,
             <button
               className="bg-white border border-[#404040] content-stretch cursor-pointer flex items-center justify-start h-[35px] px-[12px] text-left w-full"
               key={item.label}
-              onClick={item.onClick === "landSurveying" ? onNavigateLandSurveying : item.onClick === "solarWind" ? onNavigateSolarWind : item.onClick === "buildingConstruction" ? onNavigateBuildingConstruction : item.onClick === "electricWork" ? onNavigateElectricWork : item.onClick === "buildingManagement" ? onNavigateBuildingManagement : undefined}
+              onClick={item.onClick === "infrastructureDevelopment" ? onNavigateInfrastructureDevelopment : item.onClick === "landSurveying" ? onNavigateLandSurveying : item.onClick === "solarWind" ? onNavigateSolarWind : item.onClick === "buildingConstruction" ? onNavigateBuildingConstruction : item.onClick === "electricWork" ? onNavigateElectricWork : item.onClick === "buildingManagement" ? onNavigateBuildingManagement : undefined}
               type="button"
             >
               <span className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[21px] not-italic relative shrink-0 text-[#404040] text-[16px] whitespace-nowrap">{item.label}</span>
@@ -1976,12 +1980,12 @@ function Frame9({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind,
   );
 }
 
-export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateProjectsSection, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
+export default function Home({ onNavigateAbout, onNavigateInfrastructureDevelopment, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateProjectsSection, onNavigateSustainability, onNavigateCareers, onNavigateContact }: HomeProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center relative size-full" data-name="HOME">
       <Frame39 onNavigateProjectsSection={onNavigateProjectsSection} />
       <Frame80 />
-      <Frame41 onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
+      <Frame41 onNavigateInfrastructureDevelopment={onNavigateInfrastructureDevelopment} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} />
       <Frame43 />
       <Frame34 />
       <Frame35 />
@@ -2003,7 +2007,7 @@ export default function Home({ onNavigateAbout, onNavigateLandSurveying, onNavig
       <div className="bg-white content-stretch flex fixed items-center justify-between left-0 px-[120px] py-[10px] shadow-[0px_2px_8px_rgba(0,0,0,0.12)] top-0 w-[1440px] z-50" data-name="NAV BAR">
         <div aria-hidden className="absolute border border-[rgba(64,64,64,0.5)] border-solid inset-0 pointer-events-none" />
         <Frame38 />
-        <Frame9 onNavigateAbout={onNavigateAbout} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
+      <Frame9 onNavigateAbout={onNavigateAbout} onNavigateInfrastructureDevelopment={onNavigateInfrastructureDevelopment} onNavigateLandSurveying={onNavigateLandSurveying} onNavigateSolarWind={onNavigateSolarWind} onNavigateBuildingConstruction={onNavigateBuildingConstruction} onNavigateElectricWork={onNavigateElectricWork} onNavigateBuildingManagement={onNavigateBuildingManagement} onNavigateProjects={onNavigateProjects} onNavigateSustainability={onNavigateSustainability} onNavigateCareers={onNavigateCareers} onNavigateContact={onNavigateContact} />
         <div className="bg-[#fafafa] content-stretch flex items-center justify-center p-[10px] relative rounded-[4px] shrink-0">
           <div aria-hidden className="absolute border-[#ffce1b] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[4px]" />
           <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[21px] not-italic relative shrink-0 text-[#404040] text-[14px] text-center whitespace-nowrap">Get Consultation</p>

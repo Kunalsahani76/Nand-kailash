@@ -5,6 +5,7 @@ import Career from "@/imports/Career/index";
 import Contact from "@/imports/Contact/index";
 import ElectricWork from "@/imports/ElectricWork/index";
 import Home from "@/imports/Home/index";
+import InfrastructureDevelopment from "@/imports/InfrastructureDevelopment/index";
 import Projects from "@/imports/Projects/index";
 import ServiceSuryeys from "@/imports/ServiceSuryeys/index";
 import Sustainability from "@/imports/Sustainability/index";
@@ -13,7 +14,7 @@ import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
-type Page = "home" | "about" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement" | "projects" | "sustainability" | "career" | "contact";
+type Page = "home" | "about" | "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement" | "projects" | "sustainability" | "career" | "contact";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -24,6 +25,17 @@ export default function App() {
   const [scrollToInquiryForm, setScrollToInquiryForm] = useState(false);
   const scaleRef = useRef(1);
   const pageContentRef = useRef<HTMLDivElement>(null);
+
+  const navigateTo = useCallback((nextPage: Page) => {
+    setPage(nextPage);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  const navigateToServices = useCallback(() => {
+    setScrollToServices(true);
+    setPage("home");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -57,17 +69,34 @@ export default function App() {
     const content = pageContentRef.current;
     if (!content) return;
 
+    let timeout = 0;
+
     const updateHeight = () => {
+      window.clearTimeout(timeout);
+      // Pages using content-visibility can report several intermediate heights
+      // while sections enter the viewport. Debouncing prevents those reports
+      // from turning into a React render on every scroll frame.
+      timeout = window.setTimeout(() => {
       const nextHeight = content.scrollHeight;
       setPageHeight((currentHeight) =>
         Math.abs(currentHeight - nextHeight) > 1 ? nextHeight : currentHeight,
       );
+      }, 120);
     };
 
     updateHeight();
+    // Infrastructure now has a stable, fully laid-out page like Home. Watching
+    // it during scroll only adds main-thread work without changing its height.
+    if (page === "infrastructureDevelopment") {
+      return () => window.clearTimeout(timeout);
+    }
+
     const observer = new ResizeObserver(updateHeight);
     observer.observe(content);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(timeout);
+      observer.disconnect();
+    };
   }, [page]);
 
   useEffect(() => {
@@ -88,6 +117,7 @@ export default function App() {
     const closeAllServiceDropdowns = () => {
       document.querySelectorAll<HTMLElement>("[data-services-dropdown]").forEach((dropdown) => {
         dropdown.dataset.open = "false";
+        dropdown.querySelector<HTMLElement>("[data-services-dropdown-trigger]")?.setAttribute("aria-expanded", "false");
       });
     };
 
@@ -103,6 +133,7 @@ export default function App() {
         const willOpen = dropdown.dataset.open !== "true";
         closeAllServiceDropdowns();
         dropdown.dataset.open = String(willOpen);
+        trigger.setAttribute("aria-expanded", String(willOpen));
         return;
       }
 
@@ -114,6 +145,44 @@ export default function App() {
     document.addEventListener("click", handleDocumentClick);
     return () => document.removeEventListener("click", handleDocumentClick);
   }, []);
+
+  useEffect(() => {
+    const navbarDestinations: Record<string, Page | "services"> = {
+      Home: "home",
+      "About Us": "about",
+      Projects: "projects",
+      Sustainability: "sustainability",
+      Careers: "career",
+      "Contact Us": "contact",
+      "Infrastructure Development": "infrastructureDevelopment",
+      "Land Surveying": "landSurveying",
+      "Solar & Wind Related Work": "solarWind",
+      "Building Construction": "buildingConstruction",
+      "Electric Related Work": "electricWork",
+      "Building Management": "buildingManagement",
+    };
+
+    const handleNavbarNavigation = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const item = target.closest<HTMLElement>("button, [data-navigation]");
+      if (!item?.closest('[data-name="NAV BAR"]') || item.dataset.servicesDropdownTrigger !== undefined) return;
+
+      const destination = navbarDestinations[item.dataset.navigation ?? item.textContent?.trim() ?? ""];
+      if (!destination) return;
+
+      event.preventDefault();
+      if (destination === "services") {
+        navigateToServices();
+      } else {
+        navigateTo(destination);
+      }
+    };
+
+    document.addEventListener("click", handleNavbarNavigation);
+    return () => document.removeEventListener("click", handleNavbarNavigation);
+  }, [navigateTo, navigateToServices]);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
@@ -168,20 +237,9 @@ export default function App() {
     return () => window.clearTimeout(timeout);
   }, [page]);
 
-  const navigateTo = useCallback((nextPage: Page) => {
-    setPage(nextPage);
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
-
   const navigateToCompletedProjects = useCallback(() => {
     setScrollToCompletedProjects(true);
     setPage("projects");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
-
-  const navigateToServices = useCallback(() => {
-    setScrollToServices(true);
-    setPage("home");
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
@@ -277,7 +335,7 @@ export default function App() {
       Projects: () => navigateTo("projects"),
       Careers: () => navigateTo("career"),
       Contact: () => navigateTo("contact"),
-      "Infrastructure Development": navigateToServices,
+      "Infrastructure Development": () => navigateTo("infrastructureDevelopment"),
       "Building Construction": () => navigateTo("buildingConstruction"),
       "Solar Projects": () => navigateTo("solarWind"),
       "Land Surveying": () => navigateTo("landSurveying"),
@@ -308,7 +366,9 @@ export default function App() {
   }, [navigateTo, navigateToServices, page]);
 
   const renderedPage =
-    page === "about" ? (
+    page === "infrastructureDevelopment" ? (
+      <InfrastructureDevelopment />
+    ) : page === "about" ? (
       <AboutUs
         onNavigateHome={() => navigateTo("home")}
         onNavigateLandSurveying={() => navigateTo("landSurveying")}
@@ -450,6 +510,7 @@ export default function App() {
     ) : (
       <Home
         onNavigateAbout={() => navigateTo("about")}
+        onNavigateInfrastructureDevelopment={() => navigateTo("infrastructureDevelopment")}
         onNavigateLandSurveying={() => navigateTo("landSurveying")}
         onNavigateSolarWind={() => navigateTo("solarWind")}
         onNavigateBuildingConstruction={() => navigateTo("buildingConstruction")}

@@ -1,3 +1,11 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Infrastructure uses the same stable, fully laid-out scrolling model as the
+   home page. Content visibility was causing section-size changes mid-scroll. */
+[data-name="Infrastructure Development"] > [data-name^="Section -"],
+[data-name="Infrastructure Development"] > [data-name="Progress Section"] {
+  content-visibility: visible;
+  contain: none;
+}

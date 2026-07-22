@@ -39,6 +39,7 @@ type ServiceDropdownItem = {
 };
 
 const serviceDropdownItems: ServiceDropdownItem[] = [
+  { label: "Infrastructure Development" },
   { label: "Land Surveying", onClick: "landSurveying" },
   { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },

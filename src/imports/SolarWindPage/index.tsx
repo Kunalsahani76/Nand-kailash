@@ -27,6 +27,7 @@ type SolarWindPageProps = {
 };
 
 const serviceDropdownItems = [
+  { label: "Infrastructure Development", onClick: "infrastructureDevelopment" },
   { label: "Land Surveying", onClick: "landSurveying" },
   { label: "Solar & Wind Related Work", onClick: "solarWind" },
   { label: "Building Construction", onClick: "buildingConstruction" },
@@ -55,6 +56,7 @@ function Navbar({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
   ];
 
   const serviceHandlers = {
+    infrastructureDevelopment: undefined,
     landSurveying: onNavigateLandSurveying,
     solarWind: onNavigateSolarWind,
     buildingConstruction: onNavigateBuildingConstruction,
