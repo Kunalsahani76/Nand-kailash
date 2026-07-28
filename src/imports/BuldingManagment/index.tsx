@@ -1209,7 +1209,6 @@ function Container35() {
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#cacaca] text-[20px] w-full">
         <p className="leading-[27px] mb-0">Pay-per-visit model for specific tasks, emergency repairs, or one-off structural audits.</p>
-        <p className="leading-[27px]">â€‹</p>
       </div>
     </div>
   );

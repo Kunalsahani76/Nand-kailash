@@ -16,8 +16,32 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const DESIGN_WIDTH = 1440;
 type Page = "home" | "about" | "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement" | "projects" | "sustainability" | "career" | "contact";
 
+const pagePaths: Record<Page, string> = {
+  home: "/",
+  about: "/about-us",
+  infrastructureDevelopment: "/infrastructure-development",
+  landSurveying: "/land-surveying",
+  solarWind: "/solar-wind",
+  buildingConstruction: "/building-construction",
+  electricWork: "/electric-related-work",
+  buildingManagement: "/building-management",
+  projects: "/projects",
+  sustainability: "/sustainability",
+  career: "/careers",
+  contact: "/contact-us",
+};
+
+function getPageFromPath(pathname: string): Page {
+  const normalizedPath = pathname.replace(/\/+$/, "") || "/";
+  const matchedPage = (Object.entries(pagePaths) as [Page, string][]).find(
+    ([, path]) => path === normalizedPath,
+  );
+
+  return matchedPage?.[0] ?? "home";
+}
+
 export default function App() {
-  const [page, setPage] = useState<Page>("home");
+  const [page, setPage] = useState<Page>(() => getPageFromPath(window.location.pathname));
   const [scale, setScale] = useState(1);
   const [pageHeight, setPageHeight] = useState(0);
   const [scrollToCompletedProjects, setScrollToCompletedProjects] = useState(false);
@@ -27,15 +51,28 @@ export default function App() {
   const pageContentRef = useRef<HTMLDivElement>(null);
 
   const navigateTo = useCallback((nextPage: Page) => {
+    const nextPath = pagePaths[nextPage];
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState({}, "", nextPath);
+    }
     setPage(nextPage);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      setPage(getPageFromPath(window.location.pathname));
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   const navigateToServices = useCallback(() => {
     setScrollToServices(true);
-    setPage("home");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
+    navigateTo("home");
+  }, [navigateTo]);
 
   useEffect(() => {
     let frame = 0;
@@ -239,15 +276,13 @@ export default function App() {
 
   const navigateToCompletedProjects = useCallback(() => {
     setScrollToCompletedProjects(true);
-    setPage("projects");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
+    navigateTo("projects");
+  }, [navigateTo]);
 
   const navigateToInquiryForm = useCallback(() => {
     setScrollToInquiryForm(true);
-    setPage("contact");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
+    navigateTo("contact");
+  }, [navigateTo]);
 
   useEffect(() => {
     if (page !== "projects" || !scrollToCompletedProjects) return;
