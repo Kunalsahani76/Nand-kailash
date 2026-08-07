@@ -285,6 +285,22 @@ export default function App() {
   }, [navigateTo]);
 
   useEffect(() => {
+    const handleExploreProjectsClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const button = target.closest('[data-name="Button"], a');
+      if (button?.textContent?.trim() !== "Explore Projects") return;
+
+      event.preventDefault();
+      navigateToCompletedProjects();
+    };
+
+    document.addEventListener("click", handleExploreProjectsClick);
+    return () => document.removeEventListener("click", handleExploreProjectsClick);
+  }, [navigateToCompletedProjects]);
+
+  useEffect(() => {
     if (page !== "projects" || !scrollToCompletedProjects) return;
 
     const frame = window.requestAnimationFrame(() => {

@@ -147,7 +147,7 @@ function OverlayBorderOverlayBlur() {
             <BackgroundBorder />
             <Heading3Margin />
             <div className="[word-break:break-word] flex flex-col font-['Poppins:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-center text-white whitespace-nowrap">
-              <p className="leading-[24px]">+91 9773944770 (Mobile)</p>
+              <p className="leading-[24px]">+91 9717154147 (Mobile)</p>
             </div>
           </div>
         </div>
@@ -195,7 +195,7 @@ function Container1() {
       <div className="flex flex-col items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center px-[3.86px] relative size-full">
           <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c4c6cf] text-[16px] text-center w-full">
-            <p className="leading-[24px]">Nanda Kailash Infrastructure &amp; Developers Private Limited, #544, DLF Prime Towers, F-79 &amp; 80, Okhla Industrial Area Phase - 1, New Delhi - 110020. INDIA.</p>
+            <p className="leading-[24px]">Nanda Kailash Infrastructure &amp; Developers Private Limited, #537, DLF Prime Towers, F-79 &amp; 80, Okhla Industrial Area Phase - 1, New Delhi - 110020. INDIA.</p>
           </div>
         </div>
       </div>
