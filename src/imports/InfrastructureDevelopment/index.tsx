@@ -1872,7 +1872,7 @@ function Container74() {
   return (
     <div className="[word-break:break-word] absolute h-[44px] leading-[21px] left-[28px] not-italic text-black top-0 w-[81.969px] whitespace-nowrap" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium left-0 text-[16px] top-0">EMAIL</p>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">info@nkid.in</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">info@nanda-kailash.in</p>
     </div>
   );
 }
@@ -1909,7 +1909,7 @@ function Container76() {
   return (
     <div className="[word-break:break-word] absolute h-[44px] leading-[21px] left-[28px] not-italic text-black top-0 w-[114.313px] whitespace-nowrap" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium left-0 text-[16px] top-0">PHONE</p>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">+91 98765 43210</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">+91 9717154147 (Mobile)</p>
     </div>
   );
 }
@@ -1943,7 +1943,7 @@ function Container78() {
     <div className="[word-break:break-word] absolute h-[68px] left-[28px] not-italic text-black top-0 w-[139.906px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
       <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[27px] w-[234px] whitespace-pre-wrap">
-        <p className="leading-[12px] mb-0">{`544, DLF Prime Towers, F-79 & 80,`}</p>
+        <p className="leading-[12px] mb-0">{`537, DLF Prime Towers, F-79 & 80,`}</p>
         <p className="leading-[12px] mb-0">​</p>
         <p className="leading-[12px] mb-0">Okhla Industrial Area Phase - 1,</p>
         <p className="leading-[12px] mb-0">​</p>

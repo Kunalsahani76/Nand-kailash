@@ -1658,7 +1658,7 @@ function Container44() {
 function Paragraph() {
   return (
     <div className="flex-[1_0_0] min-h-px relative w-[224px]" data-name="Paragraph">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[23px] left-0 not-italic text-[16px] text-black top-[-0.5px] w-[223px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
+      <p className="[word-break:break-word] absolute capitalize font-['Inter:Regular',sans-serif] font-normal leading-[32px] left-0 not-italic text-[18px] text-black top-[-0.5px] w-[314px]">{`Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more.`}</p>
     </div>
   );
 }
@@ -2061,7 +2061,7 @@ function Container51() {
   return (
     <div className="[word-break:break-word] absolute h-[44px] leading-[21px] left-[28px] not-italic text-black top-0 w-[81.969px] whitespace-nowrap" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium left-0 text-[16px] top-0">EMAIL</p>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">info@nkid.in</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">info@nanda-kailash.in</p>
     </div>
   );
 }
@@ -2098,7 +2098,7 @@ function Container53() {
   return (
     <div className="[word-break:break-word] absolute h-[44px] leading-[21px] left-[28px] not-italic text-black top-0 w-[114.313px] whitespace-nowrap" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium left-0 text-[16px] top-0">PHONE</p>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">+91 98765 43210</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal left-0 text-[14px] top-[22px]">+91 9717154147 (Mobile)</p>
     </div>
   );
 }
@@ -2129,12 +2129,14 @@ function Icon7() {
 
 function Container55() {
   return (
-    <div className="[word-break:break-word] absolute h-[112px] left-[28px] not-italic text-black top-0 w-[203px]" data-name="Container">
+    <div className="[word-break:break-word] absolute h-[68px] left-[28px] not-italic text-black top-0 w-[139.906px]" data-name="Container">
       <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[21px] left-0 text-[16px] top-0 whitespace-nowrap">ADDRESS</p>
-      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[22px] w-[260px]">
-        <p className="leading-[21px] mb-0">544, DLF Prime Towers, F-79 &amp; 80,</p>
-        <p className="leading-[21px] mb-0">Okhla Industrial Area Phase - 1,</p>
-        <p className="leading-[21px]">New Delhi - 110020. INDIA.</p>
+      <div className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[0] left-0 text-[14px] top-[27px] w-[234px] whitespace-pre-wrap">
+        <p className="leading-[12px] mb-0">537, DLF Prime Towers, F-79 &amp; 80,</p>
+        <p className="leading-[12px] mb-0">&#8203;</p>
+        <p className="leading-[12px] mb-0">Okhla Industrial Area Phase - 1,</p>
+        <p className="leading-[12px] mb-0">&#8203;</p>
+        <p className="leading-[12px]">New Delhi - 110020. INDIA.</p>
       </div>
     </div>
   );
@@ -2153,7 +2155,7 @@ function Container54() {
 
 function Container49() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] h-[196px] items-start relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[20px] h-[234px] items-start relative shrink-0 w-[262px]" data-name="Container">
       <Container50 />
       <Container52 />
       <Container54 />

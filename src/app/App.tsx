@@ -191,6 +191,7 @@ export default function App() {
       Sustainability: "sustainability",
       Careers: "career",
       "Contact Us": "contact",
+      "Get Consultation": "contact",
       "Infrastructure Development": "infrastructureDevelopment",
       "Land Surveying": "landSurveying",
       "Solar & Wind Related Work": "solarWind",
@@ -204,9 +205,16 @@ export default function App() {
       if (!(target instanceof Element)) return;
 
       const item = target.closest<HTMLElement>("button, [data-navigation]");
-      if (!item?.closest('[data-name="NAV BAR"]') || item.dataset.servicesDropdownTrigger !== undefined) return;
+      const navbar = target.closest<HTMLElement>('[data-name="NAV BAR"]');
+      if (!navbar || item?.dataset.servicesDropdownTrigger !== undefined) return;
 
-      const destination = navbarDestinations[item.dataset.navigation ?? item.textContent?.trim() ?? ""];
+      const clickedLabel =
+        item?.dataset.navigation ??
+        item?.textContent?.trim() ??
+        target.closest<HTMLElement>("p")?.textContent?.trim() ??
+        target.textContent?.trim() ??
+        "";
+      const destination = navbarDestinations[clickedLabel];
       if (!destination) return;
 
       event.preventDefault();

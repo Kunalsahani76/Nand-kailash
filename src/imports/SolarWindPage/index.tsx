@@ -698,7 +698,7 @@ function Footer() {
                 <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-contain" />
               </div>
               <p
-                className="text-black text-[16px] leading-[23px] w-[223px]"
+                className="capitalize text-black text-[18px] leading-[32px] w-[314px]"
                 style={{ fontFamily: inter, fontWeight: 400 }}
               >
                 {"Building India's infrastructure future through quality engineering, sustainable practices, and innovative solutions across construction, roads, solar, and more."}
@@ -751,7 +751,7 @@ function Footer() {
             </div>
 
             {/* Column 2: Quick Links */}
-            <div className="flex h-[289.125px] w-[179px] flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[203px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.36)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -775,7 +775,7 @@ function Footer() {
             </div>
 
             {/* Column 3: Services */}
-            <div className="flex h-[289.125px] w-[177px] flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[203px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.26)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -799,7 +799,7 @@ function Footer() {
             </div>
 
             {/* Column 4: Contact */}
-            <div className="flex h-[289.125px] w-[203px] flex-col gap-[20px]">
+            <div className="flex h-[289.125px] w-[262px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.26)" }}>
                 <h4
                   className="text-black text-[18px]"
@@ -817,7 +817,7 @@ function Footer() {
                   </svg>
                   <div>
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>EMAIL</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>info@nkid.in</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>info@nanda-kailash.in</p>
                   </div>
                 </div>
 
@@ -828,7 +828,7 @@ function Footer() {
                   </svg>
                   <div>
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>PHONE</p>
-                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>+91 98765 43210</p>
+                    <p className="text-black text-[14px]" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>+91 9717154147 (Mobile)</p>
                   </div>
                 </div>
 
@@ -838,9 +838,9 @@ function Footer() {
                     <path d={svgPaths.p1f466f80} stroke="#355D9B" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                     <path d={svgPaths.p17781bc0} stroke="#355D9B" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <div className="w-[260px] shrink-0">
+                  <div className="w-[234px] shrink-0">
                     <p className="text-black text-[16px]" style={{ fontFamily: inter, fontWeight: 500, lineHeight: "21px" }}>ADDRESS</p>
-                    <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>544, DLF Prime Towers, F-79 &amp; 80,</p>
+                    <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>537, DLF Prime Towers, F-79 &amp; 80,</p>
                     <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>Okhla Industrial Area Phase - 1,</p>
                     <p className="text-black text-[14px] whitespace-nowrap" style={{ fontFamily: inter, fontWeight: 400, lineHeight: "21px" }}>New Delhi - 110020. INDIA.</p>
                   </div>
