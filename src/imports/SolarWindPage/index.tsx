@@ -693,7 +693,7 @@ function Footer() {
         <div className="h-[417.125px] px-[64px] pt-[80px]">
           <div className="flex items-center justify-between">
             {/* Column 1: Logo + About */}
-            <div className="flex h-[273px] w-[314px] flex-col gap-[12px]">
+            <div className="flex h-[313px] w-[314px] flex-col gap-[12px]">
               <div className="relative h-[49px] w-[79px]">
                 <img src={websiteIcon} alt="Nanda Kailash" className="absolute inset-0 w-full h-full object-contain" />
               </div>
@@ -799,7 +799,7 @@ function Footer() {
             </div>
 
             {/* Column 4: Contact */}
-            <div className="flex h-[289.125px] w-[262px] flex-col gap-[20px]">
+            <div className="-translate-x-[40px] flex h-[289.125px] w-[262px] flex-col gap-[20px]">
               <div className="pb-[13px]" style={{ borderBottom: "1px solid rgba(0,0,0,0.26)" }}>
                 <h4
                   className="text-black text-[18px]"

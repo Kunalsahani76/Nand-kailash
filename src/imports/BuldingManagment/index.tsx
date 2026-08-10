@@ -1322,7 +1322,7 @@ function Frame23() {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] items-center px-[17px] py-[21px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[362.667px]" data-name="AMC">
+      <div className="bg-gradient-to-b content-stretch flex flex-col from-[rgba(255,255,255,0.1)] gap-[14px] h-[490px] items-center justify-between px-[17px] py-[21px] relative rounded-[10.386px] shrink-0 to-[rgba(153,153,153,0.1)] w-[362.667px]" data-name="AMC">
         <div aria-hidden className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[10.386px]" />
         <Heading3Margin2 />
         <Margin5 />
@@ -1748,7 +1748,7 @@ function Container45() {
 function Frame9() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="content-stretch flex flex-col gap-[12px] h-full items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[12px] h-[313px] items-start relative shrink-0 w-[314px]">
         <Container44 />
         <Paragraph />
         <Container45 />
@@ -2165,7 +2165,7 @@ function Container49() {
 
 function Container48() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
+    <div className="-translate-x-[40px] content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
       <Heading21 />
       <Container49 />
     </div>

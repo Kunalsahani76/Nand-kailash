@@ -1200,7 +1200,7 @@ function Container51() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] h-full items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[12px] h-[313px] items-start relative shrink-0 w-[314px]">
       <Container50 />
       <Paragraph />
       <Container51 />
@@ -1614,7 +1614,7 @@ function Container55() {
 
 function Container54() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
+    <div className="-translate-x-[40px] content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
       <Heading14 />
       <Container55 />
     </div>

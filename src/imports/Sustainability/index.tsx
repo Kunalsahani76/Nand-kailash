@@ -2013,7 +2013,7 @@ function Container72() {
 function Frame14() {
   return (
     <div className="flex flex-row items-center self-stretch">
-      <div className="content-stretch flex flex-col gap-[12px] h-full items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[12px] h-[313px] items-start relative shrink-0 w-[314px]">
         <Container71 />
         <Paragraph />
         <Container72 />
@@ -2428,7 +2428,7 @@ function Container76() {
 
 function Container75() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
+    <div className="-translate-x-[40px] content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0 w-[203px]" data-name="Container">
       <Heading11 />
       <Container76 />
     </div>

@@ -1976,7 +1976,7 @@ function Container72() {
 
 function Container71() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0" data-name="Container">
+    <div className="-translate-x-[40px] content-stretch flex flex-col gap-[20px] h-[289.125px] items-start relative shrink-0" data-name="Container">
       <Heading22 />
       <Container72 />
     </div>
