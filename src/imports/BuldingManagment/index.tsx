@@ -166,7 +166,7 @@ function Container2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="[word-break:break-word] capitalize flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#4b5563] text-[18px] w-full">
-        <p className="leading-[32px] mb-0">AssetGuard provides enterprise-grade preventive and corrective</p>
+        <p className="leading-[32px] mb-0">Nanda-Kailash provides enterprise-grade preventive and corrective</p>
         <p className="leading-[32px]">maintenance solutions. We manage the full lifecycle of residential, commercial, industrial, and public infrastructure assets, ensuring every bolt and circuit operates at peak performance.</p>
       </div>
     </div>
