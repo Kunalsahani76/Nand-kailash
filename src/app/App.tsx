@@ -10,11 +10,12 @@ import Projects from "@/imports/Projects/index";
 import ServiceSuryeys from "@/imports/ServiceSuryeys/index";
 import Sustainability from "@/imports/Sustainability/index";
 import SolarWindPage from "@/imports/SolarWindPage/index";
+import Teams from "@/imports/Teams/index";
 import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
-type Page = "home" | "about" | "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement" | "projects" | "sustainability" | "career" | "contact";
+type Page = "home" | "about" | "infrastructureDevelopment" | "landSurveying" | "solarWind" | "buildingConstruction" | "electricWork" | "buildingManagement" | "projects" | "sustainability" | "career" | "teams" | "contact";
 
 const pagePaths: Record<Page, string> = {
   home: "/",
@@ -28,6 +29,7 @@ const pagePaths: Record<Page, string> = {
   projects: "/projects",
   sustainability: "/sustainability",
   career: "/careers",
+  teams: "/teams",
   contact: "/contact-us",
 };
 
@@ -190,6 +192,7 @@ export default function App() {
       Projects: "projects",
       Sustainability: "sustainability",
       Careers: "career",
+      Teams: "teams",
       "Contact Us": "contact",
       "Get Consultation": "contact",
       "Infrastructure Development": "infrastructureDevelopment",
@@ -228,6 +231,24 @@ export default function App() {
     document.addEventListener("click", handleNavbarNavigation);
     return () => document.removeEventListener("click", handleNavbarNavigation);
   }, [navigateTo, navigateToServices]);
+
+  useEffect(() => {
+    // The imported Figma pages each own a navbar. Add the new Teams item beside
+    // Careers at runtime so their existing layout and navigation remain intact.
+    document.querySelectorAll<HTMLElement>('[data-name="NAV BAR"]').forEach((navbar) => {
+      if (navbar.querySelector('[data-navigation="Teams"]')) return;
+
+      const careersLabel = [...navbar.querySelectorAll<HTMLElement>("p")].find((item) => item.textContent?.trim() === "Careers");
+      const careersButton = careersLabel?.closest<HTMLButtonElement>("button");
+      if (!careersButton) return;
+
+      const teamsButton = careersButton.cloneNode(true) as HTMLButtonElement;
+      teamsButton.dataset.navigation = "Teams";
+      const teamsText = teamsButton.querySelector("p");
+      if (teamsText) teamsText.textContent = "Teams";
+      careersButton.insertAdjacentElement("afterend", teamsButton);
+    });
+  }, [page]);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
@@ -552,6 +573,8 @@ export default function App() {
         onNavigateCareers={() => navigateTo("career")}
         onNavigateContact={navigateToInquiryForm}
       />
+    ) : page === "teams" ? (
+      <Teams />
     ) : page === "contact" ? (
       <Contact
         onNavigateAbout={() => navigateTo("about")}
