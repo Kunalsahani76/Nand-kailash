@@ -3,6 +3,9 @@ import imgFrame261 from "./cfccedd9423ec9e451d9eeb42de18f7604a2fd14.png";
 import imgFooter from "./ff5318d16dd5f93f2647437a73bc8688b87582ae.png";
 import imgFrame127 from "./c20da46eb86065efabefe8dda3d480f08dfffacc.png";
 import websiteIcon from "@/images/Nanda logo.jpg";
+import indoorBadmintonImage from "@/images/Indoor Badminton.jpg";
+import fddiBuildingImage from "@/images/FDDI Building.png";
+import hindonAirportImage from "@/images/Hindon Airport AMC.jpg";
 
 type BuldingManagmentProps = {
   onNavigateAbout?: () => void;
@@ -2328,14 +2331,105 @@ function Frame7({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNa
   );
 }
 
+function MaintenanceReferenceContent() {
+  const coreTypes = [
+    ["Preventive Maintenance", "Scheduled checks keep systems performing before problems start."],
+    ["Corrective Maintenance", "Fast repairs resolve faults and restore operations."],
+    ["Routine Maintenance", "Day-to-day cleaning, waste disposal, and basic upkeep."],
+  ];
+  const tasks = [
+    ["⚙", "HVAC Systems", "Clean ducts and change air filters regularly."],
+    ["ϟ", "Electrical", "Test lights, check wires, and service backup power."],
+    ["⌂", "Exterior And Roof", "Clear gutters, fix wall cracks, and check for roof issues."],
+    ["◊", "Plumbing", "Check for leaks, clear blocked drains, and test water flow."],
+    ["♜", "Safety", "Test smoke alarms, check fire extinguishers, and inspect exit signs."],
+  ];
+  const projects = [
+    [indoorBadmintonImage, "PROJECT 01: COMPLETED", "Indoor Badminton / Squash Court", "Construction of Indoor Badminton / Squash Court at Dauss Rajasthan, Indian Oil Corporation has been completed."],
+    [fddiBuildingImage, "PROJECT 02: COMPLETED", "FDDI Building Corrective Repair", "Building Corrective repair of three Footwear Design and Development Institute (FDDI) at Jodhpur, Fursatganj and Chhindwara has been completed."],
+    [hindonAirportImage, "PROJECT 03: ON GOING", "Hindon Airport AMC", "Annual Maintenance Contract (AMC) of terminal building and its facility at Hindon Airport is on-going."],
+  ];
+  const benefits = [
+    ["01", "Reduced Downtime", "Our proactive monitoring and preventive maintenance protocols minimize operational interruptions by up to 45%.", "bg-[#375f9d] text-white col-span-2"],
+    ["02", "Extended Asset Life", "Systematic care ensures your physical assets reach or exceed their designed lifecycle expectations.", "bg-white text-[#171717]"],
+    ["03", "Cost Optimization", "Shift from reactive spending to predictable operational budgets through smart facility management.", "bg-[#ffce1b] text-[#171717]"],
+    ["04", "Regulatory Compliance", "We ensure your facility meets all local safety, environmental, and building code standards.", "bg-white text-[#171717]"],
+    ["05", "Improved Safety", "Strict adherence to safety protocols reduces workplace hazards and liability risks.", "bg-black text-white"],
+  ];
+
+  return (
+    <>
+      <section className="bg-[#f8f9ff] flex gap-[110px] items-center justify-center px-[80px] py-[96px] w-[1440px]">
+        <div className="w-[610px]">
+          <span className="bg-[#7594bd] rounded-[3px] px-[12px] py-[6px] font-['Inter:Bold',sans-serif] text-[12px] text-white uppercase tracking-[1px]">Engineered Excellence</span>
+          <h2 className="font-['Sora:Regular',sans-serif] leading-[1.17] mt-[24px] text-[#182033] text-[42px]">Maintenance Building<br />Infrastructures</h2>
+          <p className="font-['Inter:Regular',sans-serif] leading-[25px] mt-[22px] text-[#5b6473] text-[16px] w-[560px]">Building Maintenance is the Regular Work Done To Keep A Facility Safe, Clean, And Functional. It Includes Routine Cleaning, System Checks, And Structural Repairs. Doing This Work Early Stops Big Problems, Saves Money, And Helps The Building Last Longer.</p>
+        </div>
+        <div className="flex flex-col gap-[18px] w-[620px]">
+          <div className="bg-[#ffce1b] flex flex-col h-[154px] items-center justify-center rounded-[10px]">
+            <strong className="font-['Hanken_Grotesk:ExtraBold',sans-serif] text-[#375f9d] text-[52px]">24/7</strong>
+            <span className="font-['Inter:Regular',sans-serif] text-[#0b1c30] text-[14px]">Emergency Support</span>
+          </div>
+          <div className="bg-[#375f9d] flex flex-col h-[154px] items-center justify-center rounded-[10px]">
+            <strong className="font-['Hanken_Grotesk:ExtraBold',sans-serif] text-[#ffce1b] text-[52px]">99%</strong>
+            <span className="font-['Inter:Regular',sans-serif] text-white text-[14px]">Uptime Guaranteed</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#212121] flex flex-col items-center px-[80px] py-[70px] w-[1440px]">
+        <SectionTitle title="Core Types Of Maintenance" />
+        <div className="flex gap-[28px] mt-[50px]">
+          {coreTypes.map(([title, description], index) => (
+            <article className="bg-gradient-to-b border border-[rgba(255,255,255,0.16)] from-[rgba(255,255,255,0.12)] px-[26px] py-[28px] rounded-[10px] text-center to-[rgba(255,255,255,0.04)] w-[380px]" key={title}>
+              <div className="bg-[#375f9d] flex h-[42px] items-center justify-center mx-auto rounded-full text-white w-[42px]">{index === 0 ? "✦" : index === 1 ? "⌁" : "⚒"}</div>
+              <h3 className="font-['Poppins:Bold',sans-serif] mt-[16px] text-[17px] text-white">{title}</h3>
+              <p className="font-['Inter:Regular',sans-serif] leading-[20px] mt-[8px] text-[12px] text-[rgba(255,255,255,0.62)]">{description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-[66px] w-full">
+          <SectionTitle title="Essential Maintenance Tasks" />
+          <div className="bg-gradient-to-b border border-[rgba(255,255,255,0.16)] from-[rgba(255,255,255,0.12)] mx-auto mt-[40px] px-[38px] py-[24px] rounded-[9px] to-[rgba(255,255,255,0.04)] w-[620px]">
+            {tasks.map(([icon, title, detail]) => <div className="flex gap-[19px] items-center py-[11px]" key={title}><span className="text-[#24a3d8] text-[20px] w-[20px]">{icon}</span><p className="font-['Inter:Regular',sans-serif] text-[13px] text-[rgba(255,255,255,0.55)]"><strong className="font-['Poppins:Bold',sans-serif] text-[16px] text-white">{title}</strong> : {detail}</p></div>)}
+          </div>
+        </div>
+
+        <div className="mt-[82px] w-full">
+          <SectionTitle title="Our Work" />
+          <div className="flex gap-[28px] justify-center mt-[42px]">
+            {projects.map(([image, label, title, description]) => (
+              <article className="bg-gradient-to-b border border-[rgba(255,255,255,0.18)] from-[#373737] overflow-hidden p-[20px] rounded-[10px] to-[#292929] w-[362px]" key={title}>
+                <img alt={title} className="h-[165px] object-cover rounded-[7px] w-full" src={image} />
+                <p className="font-['Inter:Bold',sans-serif] mt-[20px] text-[#ffce1b] text-[11px]">{label}</p>
+                <h3 className="font-['Poppins:Regular',sans-serif] leading-[30px] mt-[20px] text-[23px] text-white">{title}</h3>
+                <p className="font-['Inter:Regular',sans-serif] leading-[23px] mt-[22px] text-[14px] text-[rgba(255,255,255,0.7)]">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-[82px] w-full">
+          <SectionTitle title="Engineered Advantages" />
+          <div className="grid gap-[20px] grid-cols-3 mx-auto mt-[42px] w-[1160px]">
+            {benefits.map(([number, title, description, colour]) => <article className={`${colour} flex flex-col h-[245px] justify-center p-[36px] rounded-[9px]`} key={number}><span className="font-['Inter:Bold',sans-serif] text-[#ffce1b] text-[12px]">{number}</span><h3 className="font-['Poppins:Bold',sans-serif] mt-[13px] text-[17px]">{title}</h3><p className="font-['Inter:Regular',sans-serif] leading-[20px] mt-[12px] text-[13px] opacity-75">{description}</p></article>)}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SectionTitle({ title }: { title: string }) {
+  return <div className="flex flex-col items-center"><h2 className="font-['Sora:Regular',sans-serif] text-[#ffce1b] text-[30px]">{title}</h2><span className="bg-white h-[3px] mt-[15px] w-[84px]" /></div>;
+}
+
 export default function BuldingManagment({ onNavigateAbout, onNavigateHome, onNavigateLandSurveying, onNavigateSolarWind, onNavigateBuildingConstruction, onNavigateElectricWork, onNavigateBuildingManagement, onNavigateProjects, onNavigateSustainability, onNavigateCareers, onNavigateContact }: BuldingManagmentProps) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center justify-center relative size-full" data-name="BULDING MANAGMENT">
       <Frame12 />
-      <Frame18 />
-      <Frame22 />
-      <Frame25 />
-      <Frame30 />
+      <MaintenanceReferenceContent />
       <SectionFinalCta />
       <div className="h-[486px] relative rounded-[6px] shrink-0 w-[1440px]" data-name="FOOTER">
         <div className="overflow-clip relative rounded-[inherit] size-full">
