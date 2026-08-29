@@ -2418,7 +2418,7 @@ function MaintenanceReferenceContent() {
         <div className="mt-[82px] w-full">
           <SectionTitle title="Engineered Advantages" />
           <div className="grid gap-[20px] grid-cols-3 mx-auto mt-[42px] w-[1160px]">
-            {benefits.map(([number, title, description, colour]) => <article className={`${colour} flex flex-col h-[245px] justify-center p-[36px] rounded-[9px]`} key={number}><span className="font-['Inter:Bold',sans-serif] text-[#ffce1b] text-[12px]">{number}</span><h3 className="font-['Poppins:Bold',sans-serif] mt-[13px] text-[17px]">{title}</h3><p className="font-['Inter:Regular',sans-serif] leading-[20px] mt-[12px] text-[13px] opacity-75">{description}</p></article>)}
+            {benefits.map(([number, title, description, colour]) => <article className={`${colour} flex flex-col h-[245px] justify-center p-[36px] rounded-[9px]`} key={number}><span className={`font-['Inter:Bold',sans-serif] text-[12px] ${number === "03" ? "text-white" : number === "04" ? "text-black" : "text-[#ffce1b]"}`}>{number}</span><h3 className="font-['Poppins:Bold',sans-serif] mt-[13px] text-[17px]">{title}</h3><p className="font-['Inter:Regular',sans-serif] leading-[20px] mt-[12px] text-[13px] opacity-75">{description}</p></article>)}
           </div>
         </div>
       </section>
