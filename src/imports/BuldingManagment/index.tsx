@@ -6,6 +6,11 @@ import websiteIcon from "@/images/Nanda logo.jpg";
 import indoorBadmintonImage from "@/images/Indoor Badminton.jpg";
 import fddiBuildingImage from "@/images/FDDI Building.png";
 import hindonAirportImage from "@/images/Hindon Airport AMC.jpg";
+import safetyIcon from "@/icons/Safety.png";
+import plumbingIcon from "@/icons/Plumbing.png";
+import hvacSystemsIcon from "@/icons/HVAC Systems.png";
+import exteriorAndRoofIcon from "@/icons/Exterior and Roof.png";
+import electricalIcon from "@/icons/Electrical.png";
 
 type BuldingManagmentProps = {
   onNavigateAbout?: () => void;
@@ -2338,11 +2343,11 @@ function MaintenanceReferenceContent() {
     ["Routine Maintenance", "Day-to-day cleaning, waste disposal, and basic upkeep."],
   ];
   const tasks = [
-    ["⚙", "HVAC Systems", "Clean ducts and change air filters regularly."],
-    ["ϟ", "Electrical", "Test lights, check wires, and service backup power."],
-    ["⌂", "Exterior And Roof", "Clear gutters, fix wall cracks, and check for roof issues."],
-    ["◊", "Plumbing", "Check for leaks, clear blocked drains, and test water flow."],
-    ["♜", "Safety", "Test smoke alarms, check fire extinguishers, and inspect exit signs."],
+    [hvacSystemsIcon, "HVAC Systems", "Clean ducts and change air filters regularly."],
+    [electricalIcon, "Electrical", "Test lights, check wires, and service backup power."],
+    [exteriorAndRoofIcon, "Exterior And Roof", "Clear gutters, fix wall cracks, and check for roof issues."],
+    [plumbingIcon, "Plumbing", "Check for leaks, clear blocked drains, and test water flow."],
+    [safetyIcon, "Safety", "Test smoke alarms, check fire extinguishers, and inspect exit signs."],
   ];
   const projects = [
     [indoorBadmintonImage, "PROJECT 01: COMPLETED", "Indoor Badminton / Squash Court", "Construction of Indoor Badminton / Squash Court at Dauss Rajasthan, Indian Oil Corporation has been completed."],
@@ -2392,7 +2397,7 @@ function MaintenanceReferenceContent() {
         <div className="mt-[66px] w-full">
           <SectionTitle title="Essential Maintenance Tasks" />
           <div className="bg-gradient-to-b border border-[rgba(255,255,255,0.16)] from-[rgba(255,255,255,0.12)] mx-auto mt-[40px] px-[38px] py-[24px] rounded-[9px] to-[rgba(255,255,255,0.04)] w-[620px]">
-            {tasks.map(([icon, title, detail]) => <div className="flex gap-[19px] items-center py-[11px]" key={title}><span className="text-[#24a3d8] text-[20px] w-[20px]">{icon}</span><p className="font-['Inter:Regular',sans-serif] text-[13px] text-[rgba(255,255,255,0.55)]"><strong className="font-['Poppins:Bold',sans-serif] text-[16px] text-white">{title}</strong> : {detail}</p></div>)}
+            {tasks.map(([icon, title, detail]) => <div className="flex gap-[19px] items-center py-[11px]" key={title}><img alt="" className="h-[24px] object-contain w-[20px]" src={icon} /><p className="font-['Inter:Regular',sans-serif] text-[13px] text-[rgba(255,255,255,0.55)]"><strong className="font-['Poppins:Bold',sans-serif] text-[16px] text-white">{title}</strong> : {detail}</p></div>)}
           </div>
         </div>
 
