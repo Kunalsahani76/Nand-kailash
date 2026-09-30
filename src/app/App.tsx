@@ -42,6 +42,33 @@ function getPageFromPath(pathname: string): Page {
   return matchedPage?.[0] ?? "home";
 }
 
+const pageMetadata: Partial<Record<Page, { title: string; description: string }>> = {
+  home: {
+    title: "Nanda Kailash | Infrastructure & AAI Survey Services",
+    description: "Nanda Kailash delivers infrastructure development, DGPS site surveys and AAI structural height clearance services across India.",
+  },
+  about: {
+    title: "About Nanda Kailash | Infrastructure & Aviation Expertise",
+    description: "Learn about Nanda Kailash Infrastructure & Developers, our infrastructure expertise and experience in DGPS and AAI-related projects.",
+  },
+  projects: {
+    title: "DGPS & AAI Height Clearance Projects | Nanda Kailash",
+    description: "Explore Nanda Kailash projects across India involving DGPS site surveys and structural height clearance for buildings and infrastructure.",
+  },
+  teams: {
+    title: "Nanda Kailash Team | Infrastructure & Aviation Experts",
+    description: "Meet the Nanda Kailash team with experience in infrastructure development, aviation systems, project management and AAI-related work.",
+  },
+  career: {
+    title: "Careers at Nanda Kailash | Infrastructure Jobs in India",
+    description: "Explore career opportunities at Nanda Kailash for engineers, supervisors, technicians and skilled professionals in infrastructure projects.",
+  },
+  contact: {
+    title: "Contact Nanda Kailash | DGPS & Infrastructure Services",
+    description: "Contact Nanda Kailash for infrastructure projects, DGPS site surveys, AAI-related requirements and business enquiries across India.",
+  },
+};
+
 export default function App() {
   const [page, setPage] = useState<Page>(() => getPageFromPath(window.location.pathname));
   const [scale, setScale] = useState(1);
@@ -51,6 +78,15 @@ export default function App() {
   const [scrollToInquiryForm, setScrollToInquiryForm] = useState(false);
   const scaleRef = useRef(1);
   const pageContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const metadata = pageMetadata[page];
+    if (!metadata) return;
+
+    document.title = metadata.title;
+    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (description) description.content = metadata.description;
+  }, [page]);
 
   const navigateTo = useCallback((nextPage: Page) => {
     const nextPath = pagePaths[nextPage];
