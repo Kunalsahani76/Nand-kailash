@@ -33,16 +33,35 @@ const pagePaths: Record<Page, string> = {
   contact: "/contact-us",
 };
 
+const canonicalPaths: Record<Page, string> = {
+  home: "/",
+  about: "/about-us",
+  infrastructureDevelopment: "/infrastructure-development",
+  landSurveying: "/land-surveying",
+  solarWind: "/solar-wind-related-work",
+  buildingConstruction: "/building-construction",
+  electricWork: "/electric-related-work",
+  buildingManagement: "/building-management",
+  projects: "/projects",
+  sustainability: "/sustainability",
+  career: "/careers",
+  teams: "/team",
+  contact: "/contact-us",
+};
+
 function getPageFromPath(pathname: string): Page {
   const normalizedPath = pathname.replace(/\/+$/, "") || "/";
   const matchedPage = (Object.entries(pagePaths) as [Page, string][]).find(
     ([, path]) => path === normalizedPath,
   );
+  const matchedCanonicalPage = (Object.entries(canonicalPaths) as [Page, string][]).find(
+    ([, path]) => path === normalizedPath,
+  );
 
-  return matchedPage?.[0] ?? "home";
+  return matchedPage?.[0] ?? matchedCanonicalPage?.[0] ?? "home";
 }
 
-const pageMetadata: Partial<Record<Page, { title: string; description: string }>> = {
+const pageMetadata: Partial<Record<Page, { title: string; description: string; keywords?: string }>> = {
   home: {
     title: "Nanda Kailash | Infrastructure & AAI Survey Services",
     description: "Nanda Kailash delivers infrastructure development, DGPS site surveys and AAI structural height clearance services across India.",
@@ -50,6 +69,36 @@ const pageMetadata: Partial<Record<Page, { title: string; description: string }>
   about: {
     title: "About Nanda Kailash | Infrastructure & Aviation Expertise",
     description: "Learn about Nanda Kailash Infrastructure & Developers, our infrastructure expertise and experience in DGPS and AAI-related projects.",
+  },
+  infrastructureDevelopment: {
+    title: "Infrastructure Development Company in India | Nanda Kailash",
+    description: "Nanda Kailash delivers infrastructure development solutions across India for civil, energy, aviation and large-scale development projects.",
+    keywords: "Infrastructure Development Company India, infrastructure development services, infrastructure projects India, infrastructure developers India, infrastructure construction company, infrastructure solutions India",
+  },
+  landSurveying: {
+    title: "DGPS & Land Surveying Services in India | Nanda Kailash",
+    description: "Nanda Kailash provides DGPS and land surveying services for infrastructure, construction and aviation-related projects across India.",
+    keywords: "DGPS Land Surveying Services India, DGPS survey services, DGPS survey company India, DGPS site survey, land survey services India, DGPS survey for AAI, airport DGPS survey, site elevation survey",
+  },
+  solarWind: {
+    title: "Solar & Wind Energy Services in India | Nanda Kailash",
+    description: "Nanda Kailash provides solar and wind-related infrastructure solutions, supporting project development, civil and electrical works across India.",
+    keywords: "Solar & Wind Energy Services India, solar energy infrastructure, wind energy infrastructure, solar project services, wind power projects, renewable energy infrastructure, solar EPC services",
+  },
+  buildingConstruction: {
+    title: "Building Construction Services in India | Nanda Kailash",
+    description: "Nanda Kailash provides building construction services for residential, commercial and infrastructure projects with professional project execution.",
+    keywords: "Building Construction Services India, building construction company India, commercial building construction, residential building construction, construction services India, infrastructure construction",
+  },
+  electricWork: {
+    title: "Electrical Infrastructure & Services in India | Nanda Kailash",
+    description: "Nanda Kailash provides electrical infrastructure and related works for buildings, construction and infrastructure projects across India.",
+    keywords: "Electrical Infrastructure Services India, electrical works India, electrical infrastructure company, electrical construction services, building electrical works, power infrastructure services, electrical project services",
+  },
+  buildingManagement: {
+    title: "Building Management & Facility Services in India | Nanda Kailash",
+    description: "Nanda Kailash provides building management and facility-related services focused on efficient operation, maintenance and management of built assets.",
+    keywords: "Building Management Services India, Building facility management, facility management services India, building maintenance services, property management services, facility operations, building management solutions",
   },
   projects: {
     title: "DGPS & AAI Height Clearance Projects | Nanda Kailash",
@@ -81,11 +130,28 @@ export default function App() {
 
   useEffect(() => {
     const metadata = pageMetadata[page];
+    const canonicalUrl = `https://www.nanda-kailash.in${canonicalPaths[page]}`;
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
     if (!metadata) return;
 
     document.title = metadata.title;
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (description) description.content = metadata.description;
+    if (metadata.keywords) {
+      let keywords = document.querySelector<HTMLMetaElement>('meta[name="keywords"]');
+      if (!keywords) {
+        keywords = document.createElement("meta");
+        keywords.name = "keywords";
+        document.head.appendChild(keywords);
+      }
+      keywords.content = metadata.keywords;
+    }
   }, [page]);
 
   const navigateTo = useCallback((nextPage: Page) => {
