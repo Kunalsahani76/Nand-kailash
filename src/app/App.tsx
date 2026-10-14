@@ -130,7 +130,7 @@ export default function App() {
 
   useEffect(() => {
     const metadata = pageMetadata[page];
-    const canonicalUrl = `https://www.nanda-kailash.in${canonicalPaths[page]}`;
+    const canonicalUrl = `https://nanda-kailash.in${canonicalPaths[page]}`;
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");
